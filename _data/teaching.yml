@@ -1,4 +1,30 @@
 -
+    name: "Для магистров АУ"
+    path: "/teaching/au/masters/"
+    language: "russian"
+    courses:
+        -
+            number: "Теория сложности 2"
+            path: "complexity-2/"
+            years:
+                -
+                    year: 2017
+                    season: "spring"
+        -
+            number: "Дискретная математика"
+            path: "dm/"
+            years:
+                -
+                    year: 2016
+                    season: "fall"
+        -
+            number: "Экспандеры"
+            path: "expanders/"
+            years:
+                -
+                    year: 2015
+                    season: "spring"
+-
     name: "Для бакалавров АУ"
     path: "/teaching/au/bachelors/"
     language: "russian"
