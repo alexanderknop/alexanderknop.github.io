@@ -33,8 +33,12 @@
     font-size: 19pt;
   }
 
-  @media all and (min-width: 480px) and (max-width: 1200px) {
+  @media all and (min-width: 600px) and (max-width: 1200px) {
     font-size: 14pt;
+  }
+
+  @media all and (min-width: 480px) and (max-width: 600px) {
+    font-size: 11pt;
   }
 }
 
@@ -43,8 +47,12 @@
     font-size: 21pt;
   }
 
-  @media all and (min-width: 480px) and (max-width: 1200px) {
+  @media all and (min-width: 600px) and (max-width: 1200px) {
     font-size: 16pt;
+  }
+
+  @media all and (min-width: 480px) and (max-width: 600px) {
+    font-size: 13pt;
   }
 }
 
