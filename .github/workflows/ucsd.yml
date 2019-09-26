@@ -1,0 +1,31 @@
+name: Deploy to the UCSD server
+
+on: [push]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build the site in the jekyll/builder container
+      run: |
+        echo -e "\n" >> _config.yml
+        echo baseurl: \"/~aknop\" >> _config.yml
+        docker run \
+        -v ${{ github.workspace }}:/srv/jekyll -v ${{ github.workspace }}/_site:/srv/jekyll/_site \
+        jekyll/builder:latest /bin/bash -c "chmod 777 /srv/jekyll && jekyll build --future && chmod a+w _site"
+    - name: Sync files with the UCSD server
+      env: # Or as an environment variable
+        UCSD_PRIVATE_KEY: ${{ secrets.UCSD_PRIVATE_KEY }}
+        UCSD_PUBLIC_KEY: ${{ secrets.UCSD_PUBLIC_KEY }}
+      run: |
+        mkdir ${HOME}/.ssh
+        echo "${UCSD_PRIVATE_KEY}" > ${HOME}/.ssh/id_rsa
+        echo "${UCSD_PUBLIC_KEY}" > ${HOME}/.ssh/id_rsa.pub
+        chmod 600 ${HOME}/.ssh/id_rsa.pub
+        chmod 600 ${HOME}/.ssh/id_rsa
+        eval "$(ssh-agent -s)"
+        ssh-add
+        rsync -avzh -e 'ssh -o StrictHostKeyChecking=no' _site/ aknop@euclid.ucsd.edu:public_html/
