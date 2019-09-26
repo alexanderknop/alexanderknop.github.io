@@ -1,0 +1,71 @@
+
+\documentclass[12pt,fleqn,a4paper]{article}
+
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{ntheorem}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\newtheorem{definition}{Определение}
+\newtheorem*{solution}{Решение}
+
+\newenvironment{task}[2] {
+	\noindent\fbox{\bf {#1} {#2}.}
+}{
+}
+
+\newcommand{\mytitle}[2] {
+  \begin{center}
+      \bf {#1} {#2}.
+  \end{center}
+}
+
+\let\origenumerate\enumerate
+\let\origendenumerate\endenumerate
+\renewenvironment{enumerate}{\origenumerate[topsep = 0pt, noitemsep]}{\origendenumerate}
+
+\begin{document}
+	\mytitle{Домашнее задание 4.}{Группа перестановок и разбиения числа в сумму слагаемых}
+	\begin{task}{DM}{46}
+		(1 балл) Число Стирлинга 1-го рода без знака $c(n,k)$ — это количество перестановок из $S_n$, имеющих в точности $k$ циклов. 
+		Доказать равенство: $$c(n,k)=c(n-1,k-1)+(n-1)\cdot c(n-1,k).$$
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{47}
+		(1 балл) Найдите рекуррентную формулу для числа перестановок, куб которых — тождественная перестановка.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{48}
+		(2 балла) Какова вероятность того, что $k$ заданных элементов принадлежат одному циклу в случайной перестановке на $n$ элементах?
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{49}
+		(2 балла) Назовём матрицами перестановок матрицы, в которых на каждой строке и в каждом столбце стоит ровно по одной единице, причём все элементы кроме этих 
+		единиц — нули. Какое минимальное количество матриц перестановок нужно зафиксировать, чтобы перемножением этих матриц (взятых в любом количестве) 
+		можно было получить любую другую матрицу перестановки?
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{50}
+		(1 балл) Докажите, что разбиений числа $n$, в которых все слагаемые не превосходят $k$, столько же, сколько разбиений $n$ на не более $k$ не нулевых слагаемых.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+\end{document}

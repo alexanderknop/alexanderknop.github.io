@@ -1,0 +1,86 @@
+@import 'libruary';
+
+header {
+    width: 100%;
+	min-height: 110px;
+    background-color: #839494;
+	color: #fcfbf6;
+
+    display: flex;
+    align-items: center;
+
+    & > div {
+        margin-left: auto;
+        margin-right: auto;
+        align-items: center;
+
+        @extend %container;
+
+        & > * {
+
+            &:first-child {
+                @extend %column-1-2;
+            }
+
+            &:nth-child(2) {
+                @extend %column-7-16;
+            }
+            &:nth-child(3) {
+                @extend %column-1-16;
+                align-self: flex-start;
+
+                & > * {
+                    border-right: 1px solid;
+                    padding-right: 5px;
+                    margin-right: 6px;
+
+                    font-weight: lighter;
+
+                    &:last-child {
+                        padding: 0;
+                        margin: 0;
+                        border: 0;
+                    }
+
+                    &.current-language {
+                        font-weight: bold;
+                    }
+
+                    & > a {
+                        color: white;
+                    }
+                }
+            }
+
+            &.center {
+                display: flex;
+                align-items: center;
+            }
+
+
+            .userpic {
+                float: left;
+            	width: 90px;
+            	height: 90px;
+
+            	margin-right: 30px;
+            }
+
+            .name {
+                @extend %huge-font;
+            }
+
+            .degree {
+                @extend %big-font;
+            }
+
+            .interests-header {
+                font-weight: bold;
+            }
+
+            .header-line {
+                display: none;
+            }
+        }
+    }
+}

@@ -1,0 +1,57 @@
+nav {
+
+    &.hide-nav {
+        display: none;
+    }
+
+    & > div {
+        & > * {
+            @extend %container;
+
+            &:last-child {
+                padding-bottom: 30px;
+            }
+        }
+
+        h2 {
+            padding-top: 30px;
+            padding-bottom: 15px;
+        }
+
+        & > h1 + * {
+            padding-top: 30px;
+        }
+
+        & > h2, & > ul {
+            background-color: white;
+        }
+
+        & > h1 {
+            @extend %foldable-header;
+        }
+
+        & > ul {
+            @extend %foldable-body;
+
+            & > li > ul {
+                list-style-type: disc;
+                color: #839494;
+            }
+        }
+
+        &.hide {
+            & > ul, & > h2 {
+                display: none;
+            }
+
+            & > h1 {
+                color: #839494;
+                border-bottom: 1px dashed #839494;
+
+                &:after {
+                    transform: rotate(0deg);
+                }
+            }
+        }
+    }
+}

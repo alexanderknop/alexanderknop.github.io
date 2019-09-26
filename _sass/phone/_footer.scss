@@ -1,0 +1,20 @@
+footer {
+    @extend %container;
+
+    margin-top: 30px;
+    margin-bottom: 20px;
+
+    & > div > div {
+        width: 50%;
+        float: left;
+        font-size: 10pt;
+
+        &.right {
+            text-align: right;
+        }
+
+        a {
+            font-size: 10pt;
+        }
+    }
+}

@@ -1,0 +1,71 @@
+
+\documentclass[12pt,fleqn,a4paper]{article}
+
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{ntheorem}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\newtheorem{definition}{Определение}
+\newtheorem*{solution}{Решение}
+
+\newenvironment{task}[2] {
+	\noindent\fbox{\bf {#1} {#2}.}
+}{
+}
+
+\newcommand{\mytitle}[2] {
+  \begin{center}
+      \bf {#1} {#2}.
+  \end{center}
+}
+
+\let\origenumerate\enumerate
+\let\origendenumerate\endenumerate
+\renewenvironment{enumerate}{\origenumerate[topsep = 0pt, noitemsep]}{\origendenumerate}
+
+\begin{document}
+	\mytitle{Домашнее задание 7.}{Раскраски графов}
+	\begin{task}{DM}{69}
+		(3 балла)
+		Докажите, что для любого простого графа $G$ на $n$ вершинах выполнено следующее неравенство:
+		$$\chi(G) + \chi(\overline{G}) \leq n+1.$$
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{70}
+		(2 балла) Пусть $\omega(G)$ — кликовое число графа $G$, то есть количество вершин в его максимальном полном подграфе.
+		Рассмотрим $n$ замкнутых интервалов $I_1,I_2,\ldots,I_n$ на вещественной оси. 
+		Построим для этих интервалов граф на $n$ вершинах $x_1, \dots, x_n$, соединяя вершины $x_i$ и $x_j$ ребром в том и только в том случае, 
+		когда $I_i \cap I_j \neq \emptyset$. Такой граф называется \emph{интервальным} графом. Докажите, что каждый интервальный граф является совершенным
+		(для любого подмножества вершин интервального графа, подграф $H$, индуцированный этим множеством вершин, обладает свойством $\chi(H)=\omega(H)$).
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{71}
+		(3 балла)
+		        Пусть $G_0=K_2$. Чтобы получить граф $G_{k+1}$ из графа $G_k$ применим следующую процедуру:
+		
+		        \begin{itemize}
+		                \item[--] множество вершин графа $G_{k+1}$ составим из вершин $V(G_k)=\{x_1,\ldots,x_n\}$, вершин $Y=\{y_1,\ldots,y_n\}$ и вершины $z$;
+		                \item[--] для каждого ребра $ \{x_i,x_j\} \in E(G_k)$ в граф $G_{k+1}$ добавим два ребра: $\{x_i,x_j\}$ и $\{y_i,x_j\}$;
+		                \item[--] для каждого $i \in [n]$ добавим в граф $G_{k+1}$ ребро $\{z,y_i\}.$ 
+		        \end{itemize}
+		        Докажите, что ни один из графов $G_i$ не имеет треугольника в качестве подграфа (то есть $\forall i : \omega(G_i) = 2$). Докажите также, что $\chi(G_{k+1})=\chi(G_{k}) + 1$.
+		        Из этого будет следовать, что существуют графы со сколь угодно большим хроматическим числом, но без нетривиальных клик.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+\end{document}

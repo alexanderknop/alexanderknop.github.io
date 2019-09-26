@@ -1,0 +1,89 @@
+<div>
+    <h1>
+        {% include tools/translate.html text="!dictionary:contacts" %}
+    </h1>
+    <ul>
+        <li>
+            <a href="http://www.math.ucsd.edu/">{{ site.department }}</a>
+        </li>
+        <li>
+            <a href="http://ucsd.edu/">{{ site.university }}</a>
+        </li>
+        <li>
+            <address>
+                {{ site.address }}
+            </address>
+        </li>
+        <li>
+            <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </li>
+    </ul>
+</div>
+<div >
+    <h1>
+        {% include tools/translate.html text="!dictionary:links" %}
+    </h1>
+    <ul>
+        {% for link in site.data.navigation.links %}
+            <li>
+                {% if link.url %}
+                    <a href="{{ link.url }}">
+                {% elsif link.local-url %}
+                    <a href="{{ link.local-url | relative_url }}">
+                {% elsif link.id-link %}
+                    <a href="{% include tools/id-link.html href=link.id-link %}">
+                {% endif %}
+                    {% include tools/translate.html text=link.text %}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<div>
+    <h1>
+        {% include tools/translate.html text="!dictionary:teaching" %}
+    </h1>
+    <h2>
+        {% include tools/translate.html text="!dictionary:current" %}
+    </h2>
+    <ul>
+        {% for position in site.data.navigation.positions.current %}
+            <li>
+                <a href="{{ position.url }}">{% include tools/translate.html text=position.name %}</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <h2>
+        {% include tools/translate.html text="!dictionary:previous" %}
+    </h2>
+    <ul>
+        {% for position in site.data.navigation.positions.previous %}
+            <li>
+                <a href="{{ position.url }}">{% include tools/translate.html text=position.name %}</a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+<div>
+    <h1>
+            {% include tools/translate.html text="!dictionary:for-students" %}
+    </h1>
+
+    {% assign institutes =  site.data.teaching | where: "language", language %}
+    {% for institute in institutes "%}
+        {% if institutes.size > 1 %}
+          <h2>{{ institute.name }}</h2>
+        {% endif %}
+        <ul>
+        {% assign sorted-courses = institute.courses | sort: "number" %}
+        {% for course in sorted-courses %}
+            {% assign sorted-offerings = course.years | sort: "year" | reverse %}
+            <li>
+                <a href="{{ site.baseurl }}{{ institute.path }}{{ course.path }}{{ sorted-offerings.first.year }}/{{ sorted-offerings.first.season }}">
+                    {{ course.number }}
+                </a>
+            </li>
+        {% endfor %}        
+        </ul>
+    {% endfor %}
+</div>

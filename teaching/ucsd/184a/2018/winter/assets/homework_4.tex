@@ -1,0 +1,73 @@
+
+
+\documentclass[addpoints,answers]{exam}
+
+\usepackage{amsmath}
+\usepackage{amssymb}    
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\sloppy
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\checkboxchar{$\Box$}
+\checkedchar{$\blacksquare$}
+\CorrectChoiceEmphasis{}
+
+
+\begin{document}
+
+    \pagestyle{headandfoot}
+    \runningheadrule
+    \firstpageheader{Math 184A}{Homework 4}{February 9, 2018}
+    \runningheader{Math 184A}{Homework 4, Page \thepage\ of \numpages}{February 9, 2018}
+
+    \firstpagefooter{}{}{}
+    \runningfooter{}{}{}
+    \begin{flushright}
+        \makebox[0.4\textwidth]{Name:\enspace\hrulefill}
+
+        \vspace{0.2in}
+
+        \makebox[0.4\textwidth]{Pid:\enspace\hrulefill}
+    \end{flushright}
+
+    \begin{questions}
+        \question[10]
+            We say that a Boolean function $f(x_1, \dots, x_n)$ 
+            ($f : \{0, 1\}^n \to \{0, 1\}$) depends on $x_i$ iff there are $v_1, \dots, v_{i
+            - 1}, v_{i + 1}, \dots, v_n$ such that 
+            \[
+                f(v_1, \dots, v_{i - 1}, 0, v_{i + 1}, \dots, v_n) \neq 
+                f(v_1, \dots, v_{i - 1}, 1, v_{i + 1}, \dots, v_n).
+            \]
+            Find a closed formula (with one summation sign from $0$ to $n$) for number of
+            functions that depends on all their inputs.
+            \begin{solutionorbox}[\stretch{1}]
+            \end{solutionorbox}
+            \newpage
+ 
+        \question[10]
+            How many numbers from $1$ to $1000$ are neither square numbers nor cubic
+            numbers?
+            \begin{solutionorbox}[\stretch{1}]
+            \end{solutionorbox}
+            \newpage
+ 
+        \question[10]
+            Let $r_1$ and $r_2$ are solutions of the equation $\lambda^2 - b_1 \lambda -
+            b_2 = 0$ and $r_1 \neq r_2$ i.e. $b_1 = r_1 + r_2$ and $b_2 = - r_1 r_2$.
+            Find a closed formula (no summation signs) for the recurrent sequence $a_n$ such
+            that $a_{n + 2} = b_1 a_{n + 1} + b_2 a_{n}$ for $n \ge 0$, $a_1 = r_1 + r_2$,
+            and $a_0 = 2$.
+            \begin{solutionorbox}[\stretch{1}]
+            \end{solutionorbox}
+            \newpage
+ 
+\end{questions}
+\end{document}

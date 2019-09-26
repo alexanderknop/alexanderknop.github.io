@@ -1,0 +1,12 @@
+-
+    id-link: "research"
+    text: "!dictionary:papers-talks"
+-
+    local-url: "/assets/files/CV.pdf"
+    text: "!dictionary:my-cv"
+-
+    url: "http://www.youtube.com/c/KnopsCourse"
+    text: "!dictionary:youtube-channel"
+-
+    url: "https://github.com/alexanderknop/I2DM"
+    text: "!dictionary:i2dm"

@@ -1,0 +1,82 @@
+
+
+\documentclass[addpoints,answers]{exam}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{skak}
+\usepackage{phaistos}
+
+\sloppy
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\checkboxchar{$\Box$}
+\checkedchar{$\blacksquare$}
+\CorrectChoiceEmphasis{}
+
+
+\begin{document}
+
+    \pagestyle{headandfoot}
+    \runningheadrule
+    \firstpageheader{Math 15A}{Homework 1}{January 12, 2018}
+    \runningheader{Math 15A}{Homework 1, Page \thepage\ of \numpages}{January 12, 2018}
+
+    \firstpagefooter{}{}{}
+    \runningfooter{}{}{}
+    \begin{flushright}
+        \makebox[0.4\textwidth]{Name:\enspace\hrulefill}
+
+        \vspace{0.2in}
+
+        \makebox[0.4\textwidth]{Pid:\enspace\hrulefill}
+    \end{flushright}
+
+    \begin{questions}
+        \question[10]
+            Write the truth table of the proposition $\lnot (p \land q) \lor (r \land \lnot
+            p)$.
+            \begin{solutionorbox}[\stretch{1}]
+            \end{solutionorbox}
+            \newpage
+        \question[10]
+            Write the symbolic expression of $(p \land q) \lor (\lnot q \land r)$ in words
+            using
+            \begin{description}
+                \item[p:] You play football.
+                \item[q:] You miss the midterm exam.
+                \item[r:] You pass the course.
+            \end{description}
+            \begin{solutionorbox}[\stretch{1}]
+            \end{solutionorbox}
+            \newpage
+        \question[10]
+            Check if the formulas $P = p \land (\lnot q \lor r)$ and $Q = p \lor (q \land
+            \lnot r)$ are equivalent, using truth tables.
+            \begin{solutionorbox}[\stretch{1}]
+            \end{solutionorbox}
+            \newpage
+        \question[20]
+            Show that 
+            $
+                \left.
+                \begin{array}{c}
+                    p \to (r \lor q) \\ 
+                    \lnot r \to \lnot q
+                \end{array}
+                \right\}
+                \implies 
+                p \to r
+            $.
+            \begin{solutionorbox}[\stretch{1}]
+            \end{solutionorbox}
+            \newpage
+\end{questions}
+\end{document}

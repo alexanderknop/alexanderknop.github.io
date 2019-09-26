@@ -1,0 +1,25 @@
+---
+layout: default
+---
+{% assign language = page.language %}
+
+<header class = "hide-header">
+    {% include header.html %}
+</header>
+<nav class = "hide-nav">
+    {% include navigation.html %}
+</nav>
+
+<main class = "show-main">
+    <div class="header">
+    	<a class = "back" href = "{% include tools/id-link.html href="index" %}"><img src = "/assets/icons/back.png"/></a>
+    	<h1 class = "title">
+    		{{ page.title }}
+    	</h1>
+    </div>
+    {{ content }}
+</main>
+
+<footer>
+    {% include footer.html %}
+</footer>

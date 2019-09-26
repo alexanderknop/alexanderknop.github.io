@@ -1,0 +1,148 @@
+-
+    name: "Для бакалавров АУ"
+    path: "/teaching/au/bachelors/"
+    language: "russian"
+    courses:
+        -
+            number: "Основы дискретной математики"
+            path: "dm-ml/"
+            years:
+                -
+                    year: 2014
+                    season: "fall"
+                -
+                    year: 2015
+                    season: "fall"
+                -
+                    year: 2016
+                    season: "fall"
+        -
+            number: "Алгебра"
+            path: "algebra/"
+            years:
+                -
+                    year: 2015
+                    season: "spring"
+        -
+            number: "Логика и теория алгоритмов"
+            path: "logic/"
+            years:
+                -
+                    year: 2015
+                    season: "fall"
+                -
+                    year: 2017
+                    season: "spring"
+        -
+            number: "Дискретная математика"
+            path: "dm/"
+            years:
+                -
+                    year: 2015
+                    season: "fall"
+                -
+                    year: 2016
+                    season: "spring"
+                -
+                    year: 2017
+                    season: "spring"
+        -
+            number: "Теория сложности"
+            path: "complexity/"
+            years:
+                -
+                    year: 2016
+                    season: "spring"
+-
+    name: "Для студентов CSC"
+    path: "/teaching/csc/"
+    language: "russian"
+    courses:
+        -
+            number: "Дискретная математика"
+            path: "dm/"
+            years:
+                -
+                    year: 2014
+                    season: "fall"
+                -
+                    year: 2015
+                    season: "fall"
+                -
+                    year: 2016
+                    season: "fall"
+-
+    name: "For UCSD students"
+    path: "/teaching/ucsd/"
+    language: "english"
+    courses:
+        -
+            name: "Mathematical Reasoning"
+            number: "Math 109"
+            path: "109/"
+            years:
+                -
+                    year: 2018
+                    season: fall
+        -
+            name: "Combinatorics"
+            number: "Math 184A"
+            path: "184a/"
+            years:
+                -
+                    year: 2018
+                    season: winter
+                -
+                    year: 2019
+                    season: spring
+        # -
+        #     name: "Linear Algebra"
+        #     number: "Math 18"
+        #     path: "18/"
+        #     years:
+        #         -
+        #             year: 2018
+        #             season: fall
+        -
+            name: "Applicable Math and Computing"
+            number: "Math 152"
+            path: "152/"
+            years:
+                -
+                    year: 2018
+                    season: spring
+        -
+            number: "Math 10C"
+            name: "Calculus III"
+            path: "10c/"
+            years:
+                -
+                    year: 2018
+                    season: fall
+        -
+            number: "Math 15A"
+            name: "Introduction to Discrete Mathematics"
+            path: "15a/"
+            years:
+                -
+                    year: 2018
+                    season: winter
+                -
+                    year: 2019
+                    season: winter
+        -
+            number: "Math 160A"
+            name: "Elementary Mathematical Logic I"
+            path: "160a/"
+            years:
+                -
+                    year: 2019
+                    season: fall
+        # -
+        #     number: "Math 160B"
+        #     name: "Introduction to Mathematical Logic"
+        #     path: "160b/"
+        #     years:
+        #         -
+        #             year: 2020
+        #             season: winter

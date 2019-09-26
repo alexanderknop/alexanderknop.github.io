@@ -1,0 +1,13 @@
+---
+# this ensures Jekyll reads the file to be transformed into CSS later
+# only Main files contain this front matter, not partials.
+---
+
+$baseurl: '{{ site.baseurl }}';
+
+@import 'phone/global';
+@import 'phone/header';
+@import 'phone/navigation';
+@import 'phone/main';
+@import 'phone/footer';
+@import 'phone/404';

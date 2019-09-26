@@ -1,0 +1,79 @@
+
+
+\documentclass[addpoints,answers]{exam}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{verbatim}
+\usepackage{skak}
+\usepackage{phaistos}
+
+\sloppy
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\checkboxchar{$\Box$}
+\checkedchar{$\blacksquare$}
+\CorrectChoiceEmphasis{}
+
+
+\begin{document}
+
+    \pagestyle{headandfoot}
+    \runningheadrule
+    \firstpageheader{Math 15A}{Homework 2}{February 9, 2018}
+    \runningheader{Math 15A}{Homework 2, Page \thepage\ of \numpages}{February 9, 2018}
+
+    \firstpagefooter{}{}{}
+    \runningfooter{}{}{}
+    \begin{flushright}
+        \makebox[0.4\textwidth]{Name:\enspace\hrulefill}
+
+        \vspace{0.2in}
+
+        \makebox[0.4\textwidth]{Pid:\enspace\hrulefill}
+    \end{flushright}
+
+    \begin{questions}
+        \question
+            10
+		    \begin{parts}
+                \part
+                    Let $A = \{x \in \mathbb{Z} : x^2 + 1 \text{is even}\} \cap \{x \in \mathbb{Q} :
+                x^2 \ge 1\}$. Write an explicit representation of $A$.
+                    \begin{solutionorbox}[\stretch{1}]
+                    \end{solutionorbox}
+		    \end{parts}
+            \newpage
+        \question
+            Let $f : \mathbb{N}^2 \to \mathbb{N}$ such that $f(x, y) = x^2 + y^2$.
+		    \begin{parts}
+                \part[10]
+                    Is $f$ a surjective function?
+                    \begin{solutionorbox}[\stretch{1}]
+                    \end{solutionorbox}
+                \part[10]
+                    Is $f$ a injective function?
+                    \begin{solutionorbox}[\stretch{1}]
+                    \end{solutionorbox}
+		    \end{parts}
+            \newpage
+        \question[10]
+            Let $R \subseteq (\mathbb{R}^2 \setminus \{(0, 0)\}) \times (\mathbb{R}^2
+            \setminus \{(0, 0)\})$ such that 
+            \[
+                (x_1, y_1) R (x_2, y_2) \iff \exists p \in \mathbb{R} \setminus \{0\}~(p x_1,
+                p y_1) = (x_2, y_2).
+            \]
+            
+            Check if $R$ is an equivalence relation.
+            \begin{solutionorbox}[\stretch{1}]
+            \end{solutionorbox}
+            \newpage
+\end{questions}
+\end{document}

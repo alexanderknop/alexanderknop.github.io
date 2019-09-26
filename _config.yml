@@ -1,0 +1,56 @@
+title: "!dictionary:alexander-knop"
+email: aaknop@gmail.com
+description: >-
+  Alexander Knop's website.
+
+repository: "alexanderknop/alexanderknop.github.io"
+
+position:  "S.E. Warschawski Assistant Professor"
+interests:
+    - "!dictionary:proof-complexity"
+    - "!dictionary:structural-complexity"
+    - "!dictionary:algorithms"
+    - "!dictionary:cryptography"
+
+address: "9500 Gilman Drive, La Jolla, CA  92093-0112, United States of America"
+university: "UC San Diego"
+department: "Department of Mathematics"
+
+# Build settings
+markdown: kramdown
+theme: minima
+plugins:
+    - jekyll-feed
+sass:
+    sass_dir: _sass
+    style: :compressed
+
+collections:
+    - papers
+
+languages:
+    -
+        full: "english"
+        short: "En"
+    -
+        full: "russian"
+        short: "Ru"
+
+defaults:
+    -
+        scope:
+            path: "teaching/ucsd"
+        values:
+            layout: "ucsd-course"
+    -
+        scope:
+            path: "teaching/csc"
+        values:
+            layout: "course"
+    -
+        scope:
+            path: "teaching/au"
+        values:
+            layout: "course"
+
+baseurl: ""

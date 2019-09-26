@@ -1,0 +1,112 @@
+
+\documentclass[12pt,fleqn,a4paper]{article}
+
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{ntheorem}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\newtheorem{definition}{Определение}
+\newtheorem*{solution}{Решение}
+
+\newenvironment{task}[2] {
+	\noindent\fbox{\bf {#1} {#2}.}
+}{
+}
+
+\newcommand{\mytitle}[2] {
+  \begin{center}
+      \bf {#1} {#2}.
+  \end{center}
+}
+
+\let\origenumerate\enumerate
+\let\origendenumerate\endenumerate
+\renewenvironment{enumerate}{\origenumerate[topsep = 0pt, noitemsep]}{\origendenumerate}
+
+\begin{document}
+	\mytitle{Домашнее задание 1.}{Биномиальные коэффициенты}
+	\begin{task}{DM}{13}
+		($1$ балл) Сколько существует шестизначных чисел, сумма цифр которых не превосходит 47?
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{14}
+		($1$ балл) Сколько различных слов можно получить, переставляя буквы слова ``метаматематика''?
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{15}
+		($1$ балл) Докажите \textit{тождество Вандермонда}:
+		        $$\binom{n+m}{k} = \sum_{i=0}^k \binom{n}{i} \cdot \binom{m}{k-i}.$$
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{16}
+		($1$ балл) С помощью \textit{формулы суммирования по верхнему индексу} 
+		        $\sum_{m=0}^n \binom{m}{k} = \binom{n+1}{k+1}$ выразите значение следующей суммы через полином от $n$:
+		        $$\sum_{i=0}^n i^3.$$
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{17}
+		($1$ балл) Для натурального $n$, назовем $n$-разбиением числа $k$ назовём упорядоченный набор неотрицательных целых чисел $a_i$, $1 \leq i \leq n$, 
+		        для которого верно, что $\sum_{i=1}^n a_i = k$. Например, $(3,0,1)$ и $(0,3,1)$ — два различных $3$-разбиения числа $4$.
+		        Подсчитайте количество $n$-разбиений числа $k$, удовлетворяющих ограничениям 
+		        $$a_i\geq s_i,\quad i=1,\ldots,n;\qquad \qquad s_1+s_2+\ldots+s_n=:s\leq k.$$
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{18}
+		($1$ балл) Сколько можно построить различных прямоугольных параллелепипедов, у которых длина каждого ребра является целым числом от $1$ до $10$? 
+		        Сколько можно построить треугольных пирамид, у которых все углы при одной из вершин прямые и длина каждого из рёбер при этой вершине является
+		        целым числом от $1$ до $10$? Многогранники считаются различными, если их нельзя совместить с помощью параллельного переноса или поворота.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{19}
+		($2$ балла) Сколькими способами можно выбрать два подмножества, $A$ и $B$, $n$-элементного множества так, чтобы их пересечение было не пусто?
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{20}
+		($2$ балла) Пусть $\widehat{S}(n,k)$ — число {\em сюрьективных отображений}, то есть число функций $f$ из $n$-элементного множества $X$ в 
+		        $k$-элементное множество $Y$, таких что $\forall y \in Y \quad \exists x \in X : f(x)=y.$ Найдите явные формулы для $\widehat{S}(n,3)$ и $\widehat{S}(n,n-2)$.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{21}
+		($2$ балла) Докажите комбинаторно следующую формулу:
+		        $$\widehat{S}(n,k)=\sum_{i=1}^n \widehat{S}(n-i,k-1) \cdot k^{i}.$$
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{22}
+		($2$ балла) Докажите комбинаторно следующую формулу:
+		        $$\widehat{S}(n,k)=k \cdot \widehat{S}(n-1,k) + k \cdot \widehat{S}(n-1,k-1).$$
+		        Эта формула вполне подходит для того, чтобы вычислять значения $\widehat{S}(n,k)$ рекурсивно. 
+		        Но чтобы вычисление не шло вечно, для каких-то значений аргументов нужно сразу знать ответ и не применять рекуррентную формулу. 
+		        Определите начальные условия: чему равно $\widehat{S}(n,0)$, $\widehat{S}(n,n)$ и, в частности, $\widehat{S}(0,0)$?
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+\end{document}

@@ -1,0 +1,88 @@
+     
+\documentclass[addpoints]{exam}
+    
+
+
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{amsmath}
+
+\usetikzlibrary{arrows,shapes}
+
+\sloppy
+
+
+\begin{document}
+
+  \pagestyle{headandfoot}
+  \runningheadrule
+  \firstpageheader{ Math 184A }{ Homework 1 }{ April 12, 2019 }
+  \runningheader{ Math 184A }{ Homework 1, Page \thepage\ of \numpages}{ April 12, 2019 }
+
+  \firstpagefooter{}{}{}
+  \runningfooter{}{}{}
+  \begin{flushright}
+    \makebox[0.4\textwidth]{Name: \enspace\hrulefill}
+
+    \vspace{0.2in}
+    \makebox[0.4\textwidth]{Pid:\enspace\hrulefill}
+  \end{flushright}
+
+  \begin{questions}
+    \question
+      Let $\ell_1$, \dots, $\ell_k$ be some nonnegative numbers
+			such that $\ell_1 + \dots + \ell_k = \ell$.
+			Find the number of weak compositions (in terms of $\ell$, $k$, and $n$)
+			$(a_1, \dots, a_k)$ of $n$ into $k$ such that $a_i \ge \ell_i$.
+
+      \begin{solution}[\stretch{1}]
+      \end{solution}
+      \newpage
+    \question
+      Let $n$ be a natrual number.
+
+      \begin{parts}
+        \part
+            Find an explicit formula for $S(n, n - 2)$.
+            \begin{solution}[\stretch{1}]
+              Note that there are two types of partition of $[n]$ into $n - 2$ parts:
+\begin{enumerate}
+  \item all the parts have size $1$ except two of size $2$,
+  \item all the parts have size $1$ except one that has size $3$.
+\end{enumerate}
+
+It is easy to see that there are $\binom{n}{3}$ partitions of the second kind,
+and there are $\frac{1}{2} \binom{n}{2} \binom{n - 2}{2}$ partitions of the
+first kind. Therefore
+$S(n, n - 2) = \frac{1}{2} \frac{1}{2} \binom{n}{2} \binom{n - 2}{2} +
+\binom{n}{3}$.
+            \end{solution}
+        \part
+            Find an explicit formula for $S(n, 3)$.
+            \begin{solution}[\stretch{1}]
+              In this problem it is easier to find the number of surjections from $[n]$ to
+$[3]$. There are $3^n$ functions from $[n]$ to $[3]$, there are $3 \cdot 2^n$
+functions from $[n]$ to $[3]$ such that the image has $2$ elements, and
+there are $3$ functions such that their image has $1$ element.
+Therefore, by the inclusion-exclusion principle, there
+are $3^n - 3 \cdot 2^n + 3$ surjections from $[n]$ to $[3]$.
+As a result, $S(n, 3) = \frac{1}{6}(3^n - 3 \cdot 2^n + 3)$.
+            \end{solution}
+      \end{parts}
+      \newpage
+    \question
+      How many numbers must be selected from the set $[6]$ to
+			guarantee that at least one pair of these numbers add up to $7$?
+
+      \begin{solution}[\stretch{1}]
+      \end{solution}
+      \newpage
+    \question
+      Show that $\int\limits_0^{+\infty} x^n e^{- x} ~ \mathrm{d}x = n!$
+			for all $n \ge 0$.
+
+      \begin{solution}[\stretch{1}]
+      \end{solution}
+      \newpage
+  \end{questions}
+\end{document}

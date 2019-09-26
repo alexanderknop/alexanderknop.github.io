@@ -1,0 +1,63 @@
+@import 'libruary';
+
+nav {
+  align-items: flex-start;
+  padding-bottom: 50px;
+
+  @extend %container;
+
+  address {
+    font-style: normal;
+  }
+
+  & > * {
+    @extend %column-1-4;
+
+    & > h1 {
+      @extend %large-font;
+
+      font-weight: bold;
+      margin-top: 57px;
+      padding-bottom: 35px;
+      border-bottom: 1px solid #839494;
+    }
+
+    & > h2 {
+      padding-top: 8px;
+      padding-bottom: 7px;
+    }
+
+    & > ul + h2 {
+      border-top: 1px solid #839494;
+    }
+
+    & > ul {
+      @extend %dotted;
+
+      & > li {
+        & > ul {
+            list-style-type: none;
+            padding-left: 20px;
+            margin-top: 10px;
+
+            & > li {
+                margin-top: 3px;
+            }
+        }
+
+        & > h3 {
+            color: #839494;
+            cursor: pointer;
+
+            &.submenu-open {
+                font-weight: bold;
+            }
+        }
+
+        & > h3.submenu-closed + ul {
+            display: none;
+        }
+      }
+    }
+  }
+}

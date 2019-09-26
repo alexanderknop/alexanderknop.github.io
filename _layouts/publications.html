@@ -1,0 +1,60 @@
+---
+layout: page
+---
+{% assign language = page.language %}
+
+{% assign column = 0 %}
+{% for bibliography-entry-type in site.data.bibliography %}
+    {% if column == 0 %}
+        <section class = "information columns-2">
+    {% endif %}
+        <div>
+            <h2>
+                {% include tools/translate.html text=bibliography-entry-type.title %}
+            </h2>
+            {% assign sorted = site.papers | sort: "year" | reverse %}
+            <ul>
+                {% for paper in sorted %}
+                    {% if paper.type ==  bibliography-entry-type.type %}
+                        <li class = "paper">
+                            <div class = "authors">
+                                {% if paper.authors.first %}
+                                    {{ paper.authors | join: ", " }}
+                                {% else %}
+                                    {{paper.authors}}
+                                {% endif %}
+                            </div>
+                            <div class = "title">
+                              {% if paper.paper-url%}
+                        		    <a href = "{{ paper.paper-url }}"> {{ paper.title }} </a>
+                              {% elsif paper.file-url%}
+                        		    <a href = "{{ paper.file-url | relative_url }}"> {{ paper.title }} </a>
+                              {% else %}
+                                {{ paper.title }}
+                              {% endif %}
+                        	  </div>
+                            <div class = "journal">
+                                {% assign result-view = "" | split: ", " %}
+                                {% for view-entry in bibliography-entry-type.view %}
+                                    {% if view-entry.first %}
+                                        {% capture prefix %}
+                                            {% include tools/translate.html text=view-entry.prefix %}
+                                        {% endcapture %}
+                                        {% assign view-item = prefix | strip | append:  " " | append: paper[view-entry.field] %}
+                                        {% assign result-view = result-view | push: view-item %}
+                                    {% else %}
+                                        {% assign result-view = result-view | push: paper[view-entry] %}
+                                    {% endif %}
+                                {% endfor %}
+                                {{ result-view | join: ", " }}
+                            </div>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    {% if column == 1 %}
+        </section>
+    {% endif %}
+    {% assign column = column | plus: 1  | modulo: 2%}
+{% endfor %}

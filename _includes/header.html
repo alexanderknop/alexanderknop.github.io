@@ -1,0 +1,53 @@
+<div>
+    <div class = "center">
+        <img src = "{{ '/assets/icons/photo.png' | relative_url }}" alt = "" class = "userpic" />
+        <div>
+            <div class = "name">
+                {% include tools/translate.html text=site.title %}
+            </div>
+            <div class = "degree">
+                {% include tools/translate.html text=site.position %}
+            </div>
+        </div>
+    </div>
+    <div>
+        <div class = "interests-header">
+            {% include tools/translate.html text="!dictionary:research-interests" %}
+        </div>
+        <div class = "fields">
+            {% assign interests-array = "" | split: ", " %}
+            {% for topic in site.interests %}
+                {% capture topic-text %}
+                    {% include tools/translate.html text=topic %}
+                {% endcapture %}
+                {% assign topic-text = topic-text | strip%}
+                {% assign interests-array =  interests-array | push: topic-text %}
+            {% endfor %}
+            {{ interests-array | join: ", " | append: "."}}
+        </div>
+    </div>
+    <div class = "languages">
+        {% for site-language in site.languages %}
+            {% if language == site-language.full %}
+                <span class = "current-language">
+            {% else %}
+                <span>
+            {% endif %}
+                {% assign translation-to = "" %}
+                {% for current-page in site.pages%}
+                    {% if page.id == current-page.id and
+                        current-page.language == site-language.full %}
+                        {% assign translation-to = current-page.url %}
+                    {% endif %}
+                {% endfor %}
+
+                {% if translation-to != "" and page.id %}
+                    <a href = "{{translation-to | relative_url}}">{{ site-language.short }}</a>
+                {% else %}
+                    {{ site-language.short }}
+                {% endif %}
+            </span>
+
+        {% endfor %}
+    </div>
+</div>

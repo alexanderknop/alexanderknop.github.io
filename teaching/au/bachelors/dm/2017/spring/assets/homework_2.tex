@@ -1,0 +1,81 @@
+
+\documentclass[12pt,fleqn,a4paper]{article}
+
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{ntheorem}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\sloppy
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\newtheorem{definition}{Определение}
+\newtheorem*{solution}{Решение}
+
+\newenvironment{task}[2] {
+	\noindent\fbox{\bf {#1} {#2}.}
+}{
+}
+
+\newcommand{\mytitle}[2] {
+  \begin{center}
+      \bf {#1} {#2}.
+  \end{center}
+}
+
+\let\origenumerate\enumerate
+\let\origendenumerate\endenumerate
+\renewenvironment{enumerate}{\origenumerate[topsep = 0pt, noitemsep]}{\origendenumerate}
+
+\begin{document}
+	\mytitle{Домашняя работа 2.}{Биномиальные коэффициенты}
+	\begin{task}{COMB}{31}
+		($1$ балл) Сколько существует шестизначных чисел, сумма цифр которых не превосходит 47?
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{32}
+		($1$ балл) Для натурального $n$, назовем $n$-разбиением числа $k$ назовем упорядоченный набор неотрицательных целых чисел $a_i$, $1 \leq i \leq n$, 
+		для которого верно, что $\sum_{i=1}^n a_i = k$. Например, $(3,0,1)$ и $(0,3,1)$ — два различных $3$-разбиения числа $4$.
+		Подсчитайте количество $n$-разбиений числа $k$, удовлетворяющих ограничениям 
+		$$a_i\geq s_i,\quad i=1,\ldots,n;\qquad \qquad s_1+s_2+\ldots+s_n=:s\leq k.$$
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{33}
+		($2$ балла) Пусть $\widehat{S}(n,k)$ — число {\em сюрьективных отображений}, то есть число функций $f$ из $n$-элементного множества $X$ в 
+		        $k$-элементное множество $Y$, таких что $\forall y \in Y \quad \exists x \in X : f(x)=y.$ Найдите явные формулы для $\widehat{S}(n,3)$ и $\widehat{S}(n,n-2)$.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{34}
+		($2$ балла) Докажите комбинаторно следующую формулу:
+		        $$\widehat{S}(n,k)=k \cdot \widehat{S}(n-1,k) + k \cdot \widehat{S}(n-1,k-1).$$
+		        Эта формула вполне подходит для того, чтобы вычислять значения $\widehat{S}(n,k)$ рекурсивно. 
+		        Но чтобы вычисление не шло вечно, для каких-то значений аргументов нужно сразу знать ответ и не применять рекуррентную формулу. 
+		        Определите начальные условия: чему равно $\widehat{S}(n,0)$, $\widehat{S}(n,n)$ и, в частности, $\widehat{S}(0,0)$?
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{35}
+		(2 балла) Пусть числом Белла $B(n)$ называется число разбиений чисел от $1$ до $n$ на неупорядоченные блоки (по определению $B(0) = 1$).
+		
+		Доказать, что число разбиений $n$-элементного множества, при котором ни в одном блоке не содержится пара последовательно идущих чисел,
+		равно числу Белла $B(n - 1)$.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+\end{document}

@@ -1,0 +1,87 @@
+
+\documentclass[12pt,fleqn,a4paper]{article}
+
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{ntheorem}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\sloppy
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\newtheorem{definition}{Определение}
+\newtheorem*{solution}{Решение}
+
+\newenvironment{task}[2] {
+	\noindent\fbox{\bf {#1} {#2}.}
+}{
+}
+
+\newcommand{\mytitle}[2] {
+  \begin{center}
+      \bf {#1} {#2}.
+  \end{center}
+}
+
+\let\origenumerate\enumerate
+\let\origendenumerate\endenumerate
+\renewenvironment{enumerate}{\origenumerate[topsep = 0pt, noitemsep]}{\origendenumerate}
+
+\begin{document}
+	\mytitle{Домашняя работа 5.}{Теория графов}
+	\begin{task}{COMB}{64}
+		(1 балл) Постройте пример такого графа $G$, что его графова последовательность
+		равна $(n, n, n - 1, n - 1, \dots, 2, 2, 1, 1)$.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{65}
+		(2 балла) Собственным числом графа $G$ называется собственное число матрицы $M_a$
+		смежности этого графа ($\lambda$ --- это собственное число матрицы $M$, если существует такой вектор $v$, что $Mv = \lambda v$). 
+		
+		Доказать, что $k$-регулярный граф $G$ имеет собственное число $\lambda = k$.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{66}
+		(1 балл) Доказать, что для произвольного турнира T справедливо равенство $\sum\limits_{v \in V(T)} (\mathrm{indeg(v)})^2 = \sum\limits_{v \in V(T)} (\mathrm{outdeg(v)})^2$.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{67}
+		(2 балла) Орграф $D$ называется сбалансированным, если для любой вершины $x \in V(D)$
+		выполняется неравенство $|\mathrm{outdeg}(x) - \mathrm{indeg}(x)| \le 1$.
+		
+		Доказать, что из любого неориентированного графа $G$ можно получить направленный сбалансированный орграф $D$
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{68}
+		(1 балл). Пусть $G$ есть граф, построенный на вершинах $1$, \dots, $15$, в котором вершины 
+		$i$ и $j$ смежны тогда и только тогда, когда их наибольший общий делитель больше единицы.
+		Подсчитать количество связных компонент такого графа, а также определить максимальную
+		длину простого пути в графе $G$.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{69}
+		(1 балл). Доказать, что в связном графе два максимальных простых пути имеют общую
+		вершину.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+\end{document}

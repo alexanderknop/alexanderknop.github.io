@@ -1,0 +1,91 @@
+
+\documentclass[12pt,fleqn,a4paper]{article}
+
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{ntheorem}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\sloppy
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\newtheorem{definition}{Определение}
+\newtheorem*{solution}{Решение}
+
+\newenvironment{task}[2] {
+	\noindent\fbox{\bf {#1} {#2}.}
+}{
+}
+
+\newcommand{\mytitle}[2] {
+  \begin{center}
+      \bf {#1} {#2}.
+  \end{center}
+}
+
+\let\origenumerate\enumerate
+\let\origendenumerate\endenumerate
+\renewenvironment{enumerate}{\origenumerate[topsep = 0pt, noitemsep]}{\origendenumerate}
+
+\begin{document}
+	\mytitle{Домашняя работа 1.}{Принцип Дирихле}
+	\begin{task}{COMB}{18}
+		(1 балл) Внутри равностороннего треугольника со стороной в один сантиметр расположено пять точек. Доказать, что расстояние между хотя бы двумя из них меньше $0.5$ сантиметров
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{19}
+		(1 балл) Узлы бесконечной клетчатой бумаги покрашены в два цвета. 
+		Доказать, что существуют две горизонтальные и две вертикальные прямые, на пересечениях которых лежат точки, покрашенные в один и тот же цвет.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{20}
+		(1 балл) На плоскости нарисовано $n$ попарно не параллельных прямых. Доказать, угол между по крайней мере двумя из этих прямых меньше или равен величине $\pi/n$.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{21}
+		(1 балл) Сколько существует целых чисел между $0$ и $999$, содержащих хотя бы одну цифру $7$?
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{22}
+		(1 балл) Доказать следующую формулу:
+			$$|A \cap B \cap C| = |A| + |B| + |C| - |A \cup B| - |A \cup C| - |B \cup C| + |A \cup B \cup C|.$$
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{23}
+		(1 балл) Доказать комбинаторно так называемую формулу суммирования по диагонали:
+		$$\sum\limits_{k = 0}^n \binom{m + k}{k} = \binom{m + m + 1}{n}.$$
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{24}
+		(3 балла)
+		Используя формулу суммирования по верхнему индексу вычислить:
+		\begin{enumerate}
+			\item[(а)] $\sum\limits_{i = 0}^n i$,
+			\item[(б)] $\sum\limits_{i = 0}^n i^2$,
+			\item[(в)] $\sum\limits_{i = 0}^n i^3$.
+		\end{enumerate}
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+\end{document}

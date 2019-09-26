@@ -1,0 +1,79 @@
+
+\documentclass[12pt,fleqn,a4paper]{article}
+
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{ntheorem}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\newtheorem{definition}{Определение}
+\newtheorem*{solution}{Решение}
+
+\newenvironment{task}[2] {
+	\noindent\fbox{\bf {#1} {#2}.}
+}{
+}
+
+\newcommand{\mytitle}[2] {
+  \begin{center}
+      \bf {#1} {#2}.
+  \end{center}
+}
+
+\let\origenumerate\enumerate
+\let\origendenumerate\endenumerate
+\renewenvironment{enumerate}{\origenumerate[topsep = 0pt, noitemsep]}{\origendenumerate}
+
+\begin{document}
+	\mytitle{Домашнее задание 6.}{Теория графов}
+	\begin{task}{DM}{61}
+		Докажите или опровергните следующее утверждение: объединение двух различных маршрутов, соединяющих две вершины, содержит простой цикл.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{62}
+		Рассмотрим квадратную сетку, состоящую из $5\cdot 5=25$ вершин, соединенных между собой сорока ребрами. Можно ли покрыть эту сетку пятью ломаными длины $8$? А восемью ломаными длины $5$?
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{63}
+		Рассмотрим простой регулярный граф $G$, степень каждой вершины которого равна четырем. Докажите, что ребра этого графа всегда можно покрасить в два цвета (красный и синий) так,
+		чтобы любая вершина была инцидентна ровно двум синим и ровно двум красным ребрам.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{64}
+		Докажите, что в графе, изображенном на рисунке, не существует гамильтонова цикла
+		(Гамильтонов цикл - это цикл проходящий по всем вершинам ровно по одному разу).
+		
+		\begin{figure}[h]
+			\centering
+			\begin{tikzpicture}[scale=0.5, auto,swap]
+				% Draw a 7,11 network
+				% First we draw the vertices
+				\foreach \pos/\name in {{(0,0)/1}, {(3,0)/2}, {(5,0)/3},
+		        	                    {(7,0)/4}, {(10,0)/5}, {(4,2)/6}, {(6,2)/7}, 
+						    {(5,4)/8}, {(4,-2)/9}, {(6,-2)/10}, {(5,-4)/11}}
+					\node[vertex] (\name) at \pos {};
+				\foreach \source/ \dest in {1/2, 4/5, 2/6, 2/9, 3/6, 3/9, 3/7, 
+						    3/10, 4/7, 4/10, 8/6, 8/7, 11/9, 11/10, 1/8, 1/11, 5/8, 5/11}
+					\path[edge] (\source) -- (\dest);
+			\end{tikzpicture}
+		\end{figure}
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+\end{document}

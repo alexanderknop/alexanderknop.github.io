@@ -1,0 +1,52 @@
+%container {
+    padding-left: 4%;
+    padding-right: 4%;
+    width: 92%;
+}
+
+%foldable-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-left: 0;
+    padding-right: 0;
+    font-size: 20pt;
+    font-weight: bold;
+
+    margin-left: 4%;
+    margin-right: 4%;
+
+    &:after {
+        float: right;
+        content: "";
+        background-image: url($baseurl + '/assets/icons/status.png');
+        width: 15px;
+        height: 15px;
+        display: block;
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        margin-right: 20px;
+        margin-left: 5px;
+
+        transform: rotate(180deg);
+    }
+}
+
+%foldable-body {
+    background-color: white;
+    list-style-position: inside;
+    list-style-type: none;
+
+
+    & > li {
+        padding-bottom: 15px;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+    }
+}

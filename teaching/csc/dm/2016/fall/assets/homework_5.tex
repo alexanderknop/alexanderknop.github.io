@@ -1,0 +1,85 @@
+
+\documentclass[12pt,fleqn,a4paper]{article}
+
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{ntheorem}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\newtheorem{definition}{Определение}
+\newtheorem*{solution}{Решение}
+
+\newenvironment{task}[2] {
+	\noindent\fbox{\bf {#1} {#2}.}
+}{
+}
+
+\newcommand{\mytitle}[2] {
+  \begin{center}
+      \bf {#1} {#2}.
+  \end{center}
+}
+
+\let\origenumerate\enumerate
+\let\origendenumerate\endenumerate
+\renewenvironment{enumerate}{\origenumerate[topsep = 0pt, noitemsep]}{\origendenumerate}
+
+\begin{document}
+	\mytitle{Домашнее задание 5.}{Методы линейной алгебры в комбинаторике и реккурентные последовательности}
+	\begin{task}{DM}{54}
+		(2 балла) Пусть $F$ — набор подмножеств $n$-элементного множества, удовлетворяющий следующим свойствам: 
+		        \begin{enumerate}
+		                \item $\forall A \in F: |A| \equiv 1 \pmod{2}.$
+		                \item $\forall A, B \in F: A \neq B \Rightarrow |A \cap B| \equiv 0 \pmod{2}.$
+		        \end{enumerate}
+		
+		        Доказать, что $|F| \leq n$.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{55}
+		(3 балла) В чёрном ящике лежит две битовых строки $A$ и $B$ длины $r^2$. Наша задача — установить, равны они или нет.
+		Для этого можно выполнять запросы следующего вида. 
+		Для каждого $i \in [r^2]$ мы решаем, хотим мы узнать $i$-й бит в строке $A$ или в строке $B$. 
+		В ответ нам возвращается строка $C$ длины $r^2$, в которой на $i$-й позиции стоит $i$-й 
+		бит одной из строк $A$ и $B$, согласно нашему запросу.
+		
+		После каждого запроса мы можем проанализировать полученную строку $C$ и записать какую-то информацию в {\em неперезаписывемую} память. Затем мы можем перейти к новому запросу;
+		при этом строка $C$ исчезает и никакой информации о строках $A$ и $B$ кроме той, которая была ранее сохранена в неперезаписываемой памяти, мы в начале нового запроса не имеем.
+		
+		Как проверить равенство строк $A$ и $B$, используя $r+1$ запрос и $r$ бит неперезаписываемой памяти?
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{56}
+		(1 балл) Сколько битовых строк длины $n$ не содержат ни подстроки 000, ни подстроки 111?
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{57}
+		(1 балл) Докажите, что числа Фибоначчи $F_n$ удовлетворяют следующему соотношению:
+		$$F_1^2+F_2^2+\ldots+ F_n^2=F_n\, F_{n+1}.$$
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{58}
+		(2 балла) Докажите, что любое натуральное число $N$ можно единственным образом представить в виде суммы $$ N=a_2F_2+\ldots+a_nF_n,$$
+		в которой коэффициенты $a_i$ равны $0$ или $1$, а кроме того, никакие два идущих подряд элемента последовательности чисел $\{a_i\}$ не равны одновременно единице.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+\end{document}

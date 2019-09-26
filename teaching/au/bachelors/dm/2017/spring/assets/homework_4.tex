@@ -1,0 +1,79 @@
+
+\documentclass[12pt,fleqn,a4paper]{article}
+
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{ntheorem}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\sloppy
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\newtheorem{definition}{Определение}
+\newtheorem*{solution}{Решение}
+
+\newenvironment{task}[2] {
+	\noindent\fbox{\bf {#1} {#2}.}
+}{
+}
+
+\newcommand{\mytitle}[2] {
+  \begin{center}
+      \bf {#1} {#2}.
+  \end{center}
+}
+
+\let\origenumerate\enumerate
+\let\origendenumerate\endenumerate
+\renewenvironment{enumerate}{\origenumerate[topsep = 0pt, noitemsep]}{\origendenumerate}
+
+\begin{document}
+	\mytitle{Домашняя работа 4.}{Рекуррентные соотношени}
+	\begin{task}{COMB}{51}
+		(1 балл) Докажите, что разбиений числа $n$, в которых все слагаемые не превосходят $k$, столько же, сколько разбиений $n$ на не более $k$ не нулевых слагаемых.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{52}
+		(2 балла) Пусть $F$ — набор подмножеств $n$-элементного множества, удовлетворяющий следующим свойствам: 
+		\begin{enumerate}
+			\item $\forall A \in F: |A| \equiv 1 \pmod{2}.$
+			\item $\forall A, B \in F: A \neq B \Rightarrow |A \cap B| \equiv 0 \pmod{2}.$
+		\end{enumerate}
+		Доказать, что $|F| \leq n$.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{53}
+		(1 балл) Булева функция $f(x_1, \dots, x_n)$ считается зависящей от своего параметра $x_i$, если существуют 
+		такие $b_1$, \dots, $b_n$ такие, что $f(b_1, \dots, b_{i - 1}, 0, \dots, b_n) \neq f(b_1, \dots, b_{i - 1}, 1, \dots, b_n)$.
+		Подсчитайте число функций которые зависят от всех своих $n$ аргументов.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{54}
+		(1 балл) В школе три спортивных команды. Для любых двух учеников найдется команда, в которой они состоят оба. Докажите, что найдется команда, 
+		в которой состоят по меньшей мере $2/3$ учеников.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{COMB}{55}
+		(2 балла) Докажите комбинаторно следующую формулу:
+		        $$\widehat{S}(n,k)=\sum_{i=1}^n \widehat{S}(n-i,k-1) \cdot k^{i}.$$
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+\end{document}

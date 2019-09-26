@@ -1,0 +1,40 @@
+.error404 {
+    background-color: white;
+    main {
+        background-color: #839494;
+        padding-bottom: 20px;
+        & > div {
+            @extend %container;
+            & > div {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                &:before {
+                    display: inline-block;
+                    content: '';
+                    background-image: url($baseurl + '/assets/icons/404.svg');
+                    background-repeat: no-repeat;
+                    background-position: center;
+                    background-size: contain;
+                    min-height: 180px;
+                    width: 100%;
+                }
+                & > div {
+                    font-size: 23pt;
+                    color: white;
+                }
+                & > a {
+                    background-color: #f7941e;
+                    padding: 10px;
+                    color: white;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+
+    footer {
+        margin-top: 10px;
+    }
+}

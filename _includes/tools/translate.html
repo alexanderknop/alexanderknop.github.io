@@ -1,0 +1,6 @@
+{%- if include.text contains "!dictionary:" -%}
+    {% assign key = include.text | remove_first: "!dictionary:"%}
+    {{ site.data.dictionary[language][key] }}
+{%- else -%}
+    {{ include.text }}
+{%- endif -%}

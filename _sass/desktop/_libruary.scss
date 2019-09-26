@@ -1,0 +1,144 @@
+%small-font {
+  @media all and (min-width: 1200px) {
+      font-size: 8pt;
+  }
+
+  @media all and (min-width: 480px) and (max-width: 1200px) {
+      font-size: 5pt;
+  }
+}
+
+%standard-font {
+  @media all and (min-width: 1200px) {
+      font-size: 11pt;
+  }
+
+  @media all and (min-width: 480px) and (max-width: 1200px) {
+      font-size: 8pt;
+  }
+}
+
+%big-font {
+  @media all and (min-width: 1200px) {
+      font-size: 13pt;
+  }
+
+  @media all and (min-width: 480px) and (max-width: 1200px) {
+      font-size: 10pt;
+  }
+}
+
+%large-font {
+  @media all and (min-width: 1200px) {
+    font-size: 19pt;
+  }
+
+  @media all and (min-width: 600px) and (max-width: 1200px) {
+    font-size: 14pt;
+  }
+
+  @media all and (min-width: 480px) and (max-width: 600px) {
+    font-size: 11pt;
+  }
+}
+
+%huge-font {
+  @media all and (min-width: 1200px) {
+    font-size: 21pt;
+  }
+
+  @media all and (min-width: 600px) and (max-width: 1200px) {
+    font-size: 16pt;
+  }
+
+  @media all and (min-width: 480px) and (max-width: 600px) {
+    font-size: 13pt;
+  }
+}
+
+%gigantic-font {
+  @media all and (min-width: 1200px) {
+    font-size: 45pt;
+  }
+
+  @media all and (min-width: 1000px) and (max-width: 1200px) {
+    font-size: 35pt;
+  }
+
+  @media all and (min-width: 800px) and (max-width: 1000px) {
+    font-size: 30pt;
+  }
+
+  @media all and (min-width: 650px) and (max-width: 800px) {
+    font-size: 25pt;
+  }
+
+  @media all and (min-width: 480px) and (max-width: 650px) {
+    font-size: 21pt;
+  }
+}
+
+
+%container {
+  @media all and (min-width: 1200px) {
+    width: 1080px;
+  }
+
+  @media all and (min-width: 480px) and (max-width: 1200px) {
+    width: 90vw;
+  }
+
+  display: flex;
+  justify-content: space-between;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+%column-1-2 {
+  width: 49%;
+}
+
+%column-1-4 {
+  width: 24%;
+}
+
+%column-7-16 {
+  width: 42%;
+}
+
+%column-1-16 {
+  width: 6%;
+}
+
+%dotted {
+  list-style-type: none;
+  padding-right: 0px;
+  padding-left: 0px;
+  margin: 0px;
+
+  & > li {
+    border-bottom: 1px dotted #839494;
+    padding-top: 8px;
+    padding-bottom: 7px;
+
+    &:last-child {
+      border: 0;
+    }
+  }
+
+  & > dd {
+    margin-left: 0;
+
+    padding-bottom: 7px;
+  }
+
+  & > dt {
+    padding-top: 8px;
+    font-weight: bold;
+  }
+
+  & > dd + dt {
+    border-top: 1px dotted #839494;
+  }
+}

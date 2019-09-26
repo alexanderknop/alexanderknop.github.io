@@ -1,0 +1,70 @@
+
+\documentclass[12pt,fleqn,a4paper]{article}
+
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{ntheorem}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\newtheorem{definition}{Определение}
+\newtheorem*{solution}{Решение}
+
+\newenvironment{task}[2] {
+	\noindent\fbox{\bf {#1} {#2}.}
+}{
+}
+
+\newcommand{\mytitle}[2] {
+  \begin{center}
+      \bf {#1} {#2}.
+  \end{center}
+}
+
+\let\origenumerate\enumerate
+\let\origendenumerate\endenumerate
+\renewenvironment{enumerate}{\origenumerate[topsep = 0pt, noitemsep]}{\origendenumerate}
+
+\begin{document}
+	\mytitle{Домашнее задание 2.}{Формула включений исключений и формула обращения Мебиуса}
+	\begin{task}{DM}{25}
+		(1 балл) В школе три спортивных команды. Для любых двух учеников найдётся команда, в которой они состоят оба. Докажите, что найдётся команда, 
+		в которой состоят по меньшей мере $2/3$ учеников.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{26}
+		(1 балл) Сколькими различными способами можно переставить цифры $\{1,1,2,2,3,4,5\}$ так, чтобы никакие две одинаковые цифры не стояли рядом?
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{27}
+		(1 балл) Через $[n]$ будем обозначать множество натуральных чисел от единицы до $n$. Функция Эйлера $\varphi(n)$ определяется как количество 
+		чисел из $[n]$, взаимно простых с $n$. Найдите формулу для $\varphi(p^k)$, если $p$ — простое.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{28}
+		(1 балл) Найдите $\varphi(210)$.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{29}
+		(1 балл) Докажите или опровергните, что для любых натуральных $n,m$ верна формула: $$\varphi(m \cdot n)=\varphi(m)\cdot \varphi(n).$$
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+\end{document}

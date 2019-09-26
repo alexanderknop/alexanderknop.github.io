@@ -1,0 +1,64 @@
+
+
+\documentclass[addpoints,answers]{exam}
+
+\usepackage{amsmath}
+\usepackage{amssymb}    
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\sloppy
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\checkboxchar{$\Box$}
+\checkedchar{$\blacksquare$}
+\CorrectChoiceEmphasis{}
+
+
+\begin{document}
+
+    \pagestyle{headandfoot}
+    \runningheadrule
+    \firstpageheader{Math 184A}{Homework 2}{January 12, 2018}
+    \runningheader{Math 184A}{Homework 2, Page \thepage\ of \numpages}{January 12, 2018}
+
+    \firstpagefooter{}{}{}
+    \runningfooter{}{}{}
+    \begin{flushright}
+        \makebox[0.4\textwidth]{Name:\enspace\hrulefill}
+
+        \vspace{0.2in}
+
+        \makebox[0.4\textwidth]{Pid:\enspace\hrulefill}
+    \end{flushright}
+
+    \begin{questions}
+        \question
+            We call a partition $\{P_1, \dots, P_k\}$ of $[n]$ nice iff $(j + 1) \not\in
+            P_i$ for every $i \in [k]$ and $j \in P_i$.
+            
+            Prove that number of nice partitions is equal to $B(n - 1)$.
+            \begin{solutionorbox}[\stretch{1}]
+            \end{solutionorbox}
+            \newpage
+ 
+        \question
+            How many different $6$-digit numbers have sum of their digits at most $47$?
+            \begin{solutionorbox}[\stretch{1}]
+            \end{solutionorbox}
+            \newpage
+ 
+        \question
+            How many ways to put $n$ indistinguishable balls into $k$ different boxes if we
+            have to put at least $a_i$ balls into the box with number $i$.
+            \begin{solutionorbox}[\stretch{1}]
+            \end{solutionorbox}
+            \newpage
+ 
+\end{questions}
+\end{document}

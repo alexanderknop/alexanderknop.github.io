@@ -1,0 +1,267 @@
+---
+layout: default
+---
+{% for instruction in site.data.teaching %}
+    {% for course in instruction.courses %}
+        {% for offering in course.years %}
+            {% assign test = instruction.path | append: course.path | append: offering.year | append: "/" | append: offering.season | append: "/" %}
+            {% if page.url == test %}
+                {% assign path = instruction.path | append: course.path %}
+                {% assign general-name = instruction.name %}
+                {% assign number = course.number %}
+                {% assign name = course.name %}
+                {% assign offerings = course.years %}
+                {% assign language = instruction.language %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endfor %}
+
+<header class = "hide-header">
+    {% include header.html %}
+</header>
+<nav class = "hide-nav">
+    {% include navigation.html %}
+</nav>
+
+
+<main class = "show-main">
+    <div class="header">
+    	<a  class = "back" href = "{% include tools/id-link.html href="index" %}"><img src = "{{ '/assets/icons/back.png' | relative_url }}"/></a>
+    	<h1 class = "title">
+    		{{ general-name }}
+    		<div class = "subtitle">
+    			{{ number }} ({{ name }})
+    		</div>
+    	</h1>
+    </div>
+    <div class = "years">
+        {% for course in offerings %}
+            <a href = "{{ site.baseurl }}{{ path }}{{ course.year }}/{{ course.season }}/">{{ course.season | capitalize}}, {{ course.year }}</a>
+        {% endfor %}
+    </div>
+
+    <section class = "information columns-3">
+    	<div>
+    		<h2>
+    			Links
+    		</h2>
+    		<ul>
+    			{{ content }}
+    		</ul>
+    	</div>
+    	<div>
+    		<h2>
+    		Information
+    		</h2>
+    		<dl>
+    			<dt>
+                    Textbook:
+                </dt>
+                <dd>
+                    The textbook for this course is:
+                    {% if page.textbook.url %}
+                        <a href = "{{ page.textbook.url }}"> {{ page.textbook.name }}</a><br>
+                    {% else %}
+                        {{ page.textbook.name }}
+                    {% endif %}
+                    {% if page.textbook.comment %}
+                        <br>
+                        {{ comment }}
+                    {% endif %}
+                </dd>
+                <dt>
+                    Grading policy:
+                </dt>
+                <dd>
+                    {% if page.grading-schemes.size > 1 %}
+                        Student's cumulative average will be computed by
+                        taking the maximum of these two grading schemes:
+                        <ul>
+                        {% for grading-scheme in page.grading-schemes %}
+                            <li>
+                            {% assign grading-scheme-array = "" | split: ", " %}
+                            {% for part in grading-scheme %}
+                                {% assign part-string = part.weight | append: "% " | append: part.name %}
+                                {% assign grading-scheme-array = grading-scheme-array | push: part-string %}
+                            {% endfor %}
+                            {{ grading-scheme-array | join: ", " }}
+                            </li>
+                        {% endfor %}
+                        </ul>
+                    {% else %}
+                    {% endif %}
+                </dd>
+                <dt>
+                    Homework:
+                </dt>
+                <dd>
+                    Homework is a very important part of the course and in order
+                    to fully master the topics it is essential that you work
+                    carefully on every assignment and try your best to complete
+                    every problem.
+                    <br>
+                    Your total homework score will be based on the total
+                    possible homework points available. After each homework you
+                    can complete an optional online
+                    <a href = "{{ page.homework.review }}">HW review</a> highlighting
+                    key concepts. If you complete the questionnaire for an
+                    assignment and that assignment is your lowest homework
+                    score, that score will be dropped from your homework
+                    average.
+                    <br>
+                    {% if page.homework.group-size == 1 %}
+                        Homework must be done alone!
+                    {% else %}
+                        Homework may be done alone or in a grpup of at most
+                        {{ page.homework.group-size }} people. Partners may be
+                        in any of the sections of the
+                        class. You are free to change partners between
+                        assignments. Problems should be solved together,
+                        not divided up between partners.
+                    {% endif %}
+                    For homework help,
+                    consult your textbook, class notes, lecturer, and TAs.
+                    It is considered a violation of the policy on academic
+                    integrity to:
+                    <ul>
+                        <li>
+                            look or ask for answers to homework problems in
+                            other texts or sources, including the internet,
+                            or to
+                        </li>
+                        <li>
+                          discuss the homework problems with anyone
+                          {% if page.homework.group-size != 1 %}
+                              outside of your group
+                          {% endif %}
+                          (unless you are in office hours with someone from
+                          the instructional team).
+                        </li>
+                    </ul>
+                    {% if page.homework.type == "gradescope" %}
+                        Homework solutions should be neatly written or typed and
+                        turned in through Gradescope by 11pm on Friday.
+                        Illegible assignments will not be graded. For
+                        step-by-step instructions on scanning and uploading your
+                        homework, see this
+                        <a href = "/assets/handouts/gradescope.pdf">handout</a>.
+                        Late homeworks will not be accepted.
+                        Submit early drafts well before the deadline to make
+                        sure partial work is graded.
+                    {% endif %}
+                </dd>
+                {% if page.quizzes %}
+                    <dt>
+                        Quizzes:
+                    </dt>
+                    <dd>
+                        Quizzes are another significant part of the course.
+                        We will have them in the last ten minutes of each
+                        {{ page.quizzes }}
+                        lectures and they will cover the material covered in the
+                        previous three lectures.
+                    </dd>
+                {% endif %}
+                {% if page.supplemental-instructions %}
+                <dt>
+                    Supplemental Instruction and Content Drop-in Tutoring:
+                </dt>
+                <dd>
+                    Teaching + Learning Commons, Academic Achievement Hub with
+                    your Department support, will be offering Supplemental
+                    Instruction (SI) and Content Drop-in Tutoring for this class.
+                    <br>
+                    SI sessions will begin meeting on Monday, October 1st.
+                    Typically, SI sessions meet three (3) times a week for
+                    50 minutes each time. See the
+                    <a href = "{{ page.supplemental-instructions }}">website</a>
+                    for more information.
+                    <br>
+                    Content Drop-in Tutoring will begin on Monday also. The
+                    general tutoring hours are 12pm - 7pm on Mondays through
+                    Fridays, and online Saturday and Sundays. This schedule
+                    varies by course, so it is recommended that students check
+                    the website before coming in. See the
+                    <a href = "{{ page.drop-in-tutoring }}">website</a> for more
+                    information
+                </dd>
+                {% endif %}
+
+                {% if page.peer-review %}
+                    <dt>
+                        Peer-review sessions:
+                    </dt>
+                    <dd>
+                        One of the most important parts of being a mathematician
+                         is being able to find flaws in your own and other's
+                         proofs. In order to help you learn this skill you will
+                         have short peer-review sessions during your discussions.
+                    </dd>
+                {% endif %}
+
+                {% if page.piazza %}
+                <dt>
+                    Discussion Board:
+                </dt>
+                <dd>
+                    <a href = "{{ page.piazza }}">The Piazza</a>
+                    forum for our class where questions can be posted and
+                    answered. It is a very helpful resource!
+                </dd>
+                {% endif %}
+    		</dl>
+    	</div>
+    	<div class = "office-hours">
+    		<h2>
+    			Office Hours
+    		</h2>
+    		<ul>
+                <li>
+                    {{ page.office }},<br>
+                    <ul>
+                        {% for office-hours in page.office-hours %}
+                        <li>
+                            {{ office-hours }}
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+    		</ul>
+    		<h3>
+    			Teaching assistants
+    		</h3>
+    		<ul>
+    			{% for ta in page.tas %}
+                    <li>
+                        {% if ta.url %}
+                            <a href = "{{ ta.url }}"> {{ ta.name }}</a>,<br>
+                        {% else %}
+                            <b> {{ ta.name }}</b>,<br>
+                        {% endif %}
+                        {{ ta.office }}:
+                        <ul>
+                            {% for office-hours in ta.office-hours %}
+                                <li>
+                                    {{ office-hours }}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </li>
+                {% endfor %}
+    		</ul>
+    	</div>
+    </section>
+    {% if page.calendar %}
+        <section class = "calendar">
+            <h2>
+    		          Calendar
+    	    </h2>
+            {% include_relative {{ page.calendar }} %}
+        </section>
+    {% endif %}
+</main>
+
+<footer>
+    {% include footer.html %}
+</footer>

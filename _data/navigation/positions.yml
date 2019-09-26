@@ -1,0 +1,14 @@
+current:
+    -
+        name: "!dictionary:uc-san-diego"
+        url: "http://ucsd.edu/"
+previous:
+    -
+        name: "!dictionary:spb-au"
+        url: "http://mit.spbau.ru/"
+    -
+        name: "!dictionary:yumsh"
+        url: "http://www.yumsh.spbu.ru/cms/"
+    -
+        name: "Computer Science Center"
+        url: "http://compscicenter.ru/"

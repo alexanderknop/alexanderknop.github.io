@@ -1,0 +1,73 @@
+@import 'libruary';
+
+header {
+    width: 100%;
+    background-color: #839494;
+    color: #fcfbf6;
+    padding-top: 30px;
+    padding-bottom: 50px;
+
+    &.hide-header {
+        display: none;
+    }
+
+    & > div {
+        @extend %container;
+
+        display: flex;
+        flex-direction: column;
+
+        .userpic {
+            display: none;
+        }
+
+        .name {
+            font-size: 40pt;
+            font-weight: bold;
+        }
+
+        .degree {
+            font-size: 30pt;
+            border-bottom: 3px solid #fcfbf6;
+            padding-bottom: 30px;
+        }
+
+        .interests-header {
+            font-weight: bold;
+            padding-top: 30px;
+        }
+
+        & > * {
+          order: 2;
+        }
+
+        & > .languages {
+          order: 1;
+
+          display: flex;
+          justify-content: flex-end;
+
+          & > span {
+            border-right: 1px solid;
+            padding-right: 5px;
+            margin-right: 6px;
+
+            font-weight: lighter;
+
+            &:last-child {
+                padding: 0;
+                margin: 0;
+                border: 0;
+            }
+
+            &.current-language {
+                font-weight: bold;
+            }
+
+            & > a {
+              color: #fcfbf6;
+            }
+          }
+        }
+    }
+}

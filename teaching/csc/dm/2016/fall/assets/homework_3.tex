@@ -1,0 +1,94 @@
+
+\documentclass[12pt,fleqn,a4paper]{article}
+
+\usepackage[russian]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{enumitem}
+\usepackage{ntheorem}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\newtheorem{definition}{Определение}
+\newtheorem*{solution}{Решение}
+
+\newenvironment{task}[2] {
+	\noindent\fbox{\bf {#1} {#2}.}
+}{
+}
+
+\newcommand{\mytitle}[2] {
+  \begin{center}
+      \bf {#1} {#2}.
+  \end{center}
+}
+
+\let\origenumerate\enumerate
+\let\origendenumerate\endenumerate
+\renewenvironment{enumerate}{\origenumerate[topsep = 0pt, noitemsep]}{\origendenumerate}
+
+\begin{document}
+	\mytitle{Домашнее задание 3.}{Частично упорядоченные множества}
+	\begin{task}{DM}{33}
+		(1 балл) В ящике $10$ белых и $20$ черных носков. Сколько минимум нужно вынуть носков, чтобы гарантировать, что вам удастся вынуть хотябы два 
+		одного цвета.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{34}
+		(1 балл) Найдите такое минимальное $k$, что если мы выберем $k$ различных чисел из чисел от $1$ до $20$, то обязательно найдется пара 
+		дающая в сумме $21$.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{35}
+		(1 балл) Пусть $\{A_i\}, i \in [k]$ — набор из $k$ подмножеств множества $[n]$. Известно, что пересечение любых двух подмножеств 
+		из этого набора непусто. Докажите, что $k \leq  2^{n-1}$. Приведите пример, на котором в этом неравенстве достигается равенство.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{36}
+		(1 балл) Даны несколько различных натуральных чисел. Докажите, что если среди
+		любых $n$ из них можно выбрать два так, что одно делится на другое, то все 
+		числа можно покрасить в $n - 1$ цвет так, чтобы из любых двух чисел одного
+		цвета одно делилось на другое.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{37}
+		(1 балл) Докажите, что любая последовательность из $n^2 + 1$ различных целых чисел содержит либо убывающую, либо возрастающую подпоследовательность 
+		из не менее чем $n + 1$ числа.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{38}
+		(2 балла) Пусть на прямой задана произвольная система отрезков. Обозначим
+		через $M$ наименьшее количество точек на прямой таких, что каждый из
+		отрезков системы содержит одну из этих точек; через $m$ — наибольшее
+		количество попарно непересекающихся отрезков, которые можно выбрать из
+		данной системы. Докажите, что $M = m$.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+	\begin{task}{DM}{39}
+		(2 балла) Пусть числом Белла $B(n)$ называется число разбиений чисел от $1$ до $n$ на неупорядоченные блоки (по определению $B(0) = 1$).
+		
+		Доказать, что число разбиений $n$-элементного множества, при котором ни в одном блоке не содержится пара последовательно идущих чисел,
+		равно числу Белла $B(n - 1)$.
+	\end{task}
+	\begin{solution}
+	\end{solution}
+
+\end{document}

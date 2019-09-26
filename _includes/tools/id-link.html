@@ -1,0 +1,8 @@
+{% assign href = "" %}
+{% for current-page in site.pages %}
+    {% if current-page.id == include.href and
+        current-page.language == language %}
+        {% assign href =  current-page.url %}
+    {% endif %}
+{% endfor %}
+{{ href | relative_url }}

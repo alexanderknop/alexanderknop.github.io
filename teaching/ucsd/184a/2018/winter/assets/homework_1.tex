@@ -1,0 +1,81 @@
+
+
+\documentclass[addpoints,answers]{exam}
+
+\usepackage{amsmath}
+\usepackage{amssymb}    
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{verbatim}
+
+\sloppy
+
+\usetikzlibrary{arrows,shapes}
+
+\tikzstyle{vertex}=[circle,fill=black,minimum size=3pt,inner sep=0pt]
+\tikzstyle{edge} = [draw,thick,-]
+
+\checkboxchar{$\Box$}
+\checkedchar{$\blacksquare$}
+\CorrectChoiceEmphasis{}
+
+
+\begin{document}
+
+    \pagestyle{headandfoot}
+    \runningheadrule
+    \firstpageheader{Math 184A}{Homework 1}{January 12, 2018}
+    \runningheader{Math 184A}{Homework 1, Page \thepage\ of \numpages}{January 12, 2018}
+
+    \firstpagefooter{}{}{}
+    \runningfooter{}{}{}
+    \begin{flushright}
+        \makebox[0.4\textwidth]{Name:\enspace\hrulefill}
+
+        \vspace{0.2in}
+
+        \makebox[0.4\textwidth]{Pid:\enspace\hrulefill}
+    \end{flushright}
+
+    \begin{questions}
+        \question[20]
+            Prove the following equalities.
+		    \begin{parts}
+                \part
+                
+                    $1^2 + 2^2 + \dots + n^2 = \frac{n(n + 1 / 2)(n + 1)}{3}$;
+                    \begin{solutionorbox}[\stretch{1}]
+                    \end{solutionorbox}
+                \part
+                
+                    $1^3 + 2^3 + \dots + n^3 = \left(\frac{n(n + 1)}{2} \right)^2$;
+                    \begin{solutionorbox}[\stretch{1}]
+                    \end{solutionorbox}
+		    \end{parts}            
+            \newpage
+  
+ 
+        \question[20]
+            Prove that for every integers $a_1$, \dots, $a_n$ there are $k > 0$ and $\ell
+            \ge 0$ such that
+            $k + \ell \le n$ and $\sum\limits_{i = 0}^\ell a_{k + i}$ is divisible by $n$.
+            \begin{solutionorbox}[\stretch{1}]
+            \end{solutionorbox}
+            \newpage
+ 
+        \question[10]
+            How many $6$-digit numbers are there that have the same reminder modulo $2$ of all
+            the digits?
+            \begin{solutionorbox}[\stretch{1}]
+            \end{solutionorbox}
+            \newpage
+ 
+        \question[20]
+            How many pairs of subsets $A, B \subseteq [n]$ are there such that $A \cap B
+            \neq \emptyset$.
+            \begin{solutionorbox}[\stretch{1}]
+            \end{solutionorbox}
+            \newpage
+ 
+\end{questions}
+\end{document}

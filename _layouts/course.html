@@ -1,0 +1,96 @@
+---
+layout: default
+---
+{% for instruction in site.data.teaching %}
+    {% for course in instruction.courses %}
+        {% for offering in course.years %}
+            {% assign test = instruction.path | append: course.path | append: offering.year | append: "/" | append: offering.season | append: "/" %}
+            {% if page.url == test %}
+                {% assign path = instruction.path | append: course.path %}
+                {% assign general-name = instruction.name %}
+                {% assign number = course.number %}
+                {% assign name = course.name %}
+                {% assign offerings = course.years | reverse%}
+                {% assign language = instruction.language %}
+            {% endif %}
+        {% endfor %}
+    {% endfor %}
+{% endfor %}
+<header class = "hide-header">
+    {% include header.html %}
+</header>
+<nav class = "hide-nav">
+    {% include navigation.html %}
+</nav>
+
+
+<main class = "show-main">
+    <div class="header">
+    	<a  class = "back" href = "{% include tools/id-link.html href="index" %}"><img src = "{{ '/assets/icons/back.png' | relative_url }}"/></a>
+    	<h1 class = "title">
+    		{{ general-name }}
+    		<div class = "subtitle">
+    			{{ number }} {% if name %}({{ name }}) {% endif %}
+    		</div>
+    	</h1>
+    </div>
+    <div class = "years">
+        {% for course in offerings %}
+            {% assign season = "!dictionary:" | append: course.season %}
+            <a href = "{{ site.baseurl }}{{ path }}{{ course.year }}/{{ course.season }}/">{% include tools/translate.html text=season %}, {{ course.year }}</a>
+        {% endfor %}
+    </div>
+
+    {% assign columns-number = 0 %}
+    {% if page.links %}
+        {% assign columns-number = columns-number | plus: 1 %}
+    {% endif %}
+    {% if page.information %}
+        {% assign columns-number = columns-number | plus: 1 %}
+    {% endif %}
+    {% if page.office-hours %}
+        {% assign columns-number = columns-number | plus: 1 %}
+    {% endif %}
+    <section class = "information columns-{{columns-number}}">
+        {% if page.links %}
+        	<div>
+        		<h2>
+        			{% include tools/translate.html text="!dictionary:links" %}
+        		</h2>
+        		<ul>
+                    {% include_relative {{ page.links }} %}
+        		</ul>
+        	</div>
+        {% endif %}
+        {% if page.information %}
+        	<div>
+        		<h2>
+        		    {% include tools/translate.html text="!dictionary:information" %}
+        		</h2>
+                <ul>
+        		    {% include_relative {{ page.information }} %}
+                </ul>
+        	</div>
+        {% endif %}
+    </section>
+    {% if page.calendar %}
+        <section class = "calendar">
+            <h2>
+                {% include tools/translate.html text="!dictionary:calendar" %}
+    	    </h2>
+            {% include_relative {{ page.calendar }} %}
+        </section>
+    {% endif %}
+    {% if page.results %}
+        <section class = "results">
+            <h2>
+                {% include tools/translate.html text="!dictionary:results" %}
+            </h2>
+            {% include_relative {{ page.results }} %}
+        </section>
+    {% endif %}
+</main>
+
+<footer>
+    {% include footer.html %}
+</footer>

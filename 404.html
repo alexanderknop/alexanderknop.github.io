@@ -1,0 +1,25 @@
+---
+layout: base
+permalink: /404.html
+---
+{% assign language = "english" %}
+<body class = "error404">
+    <header>
+        {% include header.html %}
+    </header>
+
+    <main>
+        <div>
+            <div>
+                <div>
+                    Seems we are lost
+                </div>
+                <a href = "{{ '/' | relative_url }}">Go to homepage</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        {% include footer.html %}
+    </footer>
+</body>

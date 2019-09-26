@@ -1,0 +1,24 @@
+@import 'libruary';
+
+footer {
+  @extend %small-font;
+
+  color: rgb(131, 148, 148);
+  margin-bottom: 7px;
+
+  & > div {
+    @extend %container;
+
+    margin-top: 50px;
+    border-top: 1px dotted rgb(131, 148, 148);
+
+    & > div {
+      @extend %column-1-2;
+      @extend %small-font;
+
+      &.right {
+        text-align: right;
+      }
+    }
+  }
+}

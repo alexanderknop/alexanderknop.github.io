@@ -1,0 +1,65 @@
+     
+\documentclass[addpoints]{exam}
+    
+
+
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\sloppy
+
+
+\begin{document}
+
+  \pagestyle{headandfoot}
+  \runningheadrule
+  \firstpageheader{ Math 15A }{ Homework 3 }{ February 1, 2019 }
+  \runningheader{ Math 15A }{ Homework 3, Page \thepage\ of \numpages}{ February 1, 2019 }
+
+  \firstpagefooter{}{}{}
+  \runningfooter{}{}{}
+  \begin{flushright}
+    \makebox[0.4\textwidth]{Name: \enspace\hrulefill}
+
+    \vspace{0.2in}
+    \makebox[0.4\textwidth]{Pid:\enspace\hrulefill}
+  \end{flushright}
+
+  \begin{questions}
+    \question[10]
+      Let $a_n$ be a sequence such that $a_1 = 9$, $a_2 = 41$, and
+			$a_{n + 2} = 9a_{n + 1} - 20a_n$. Show that $a_n = 4^n + 5^n$.
+
+      \begin{solution}[\stretch{1}]
+      \end{solution}
+      \newpage
+    \question
+      We say that $L$ is a list of powers of $x$ iff
+			\begin{itemize}
+			  \item either $L = x^k$ for some positive integer $k$ or
+			  \item $L = (x^k, L')$ where $L'$ is a list of powers of $x$ and
+			    $k$ is a positive integer.
+			\end{itemize}
+			
+			Let $L$ be a list of powers of $x$. We say that the sum of $L$
+			with $x = v$ denoted by $\sum L\big\rvert_{x = v}$
+			\begin{itemize}
+			  \item is equal to $v^k$ whether $L = x^k$ and
+			  \item is equal to $v^k + \sum L'\big\rvert_{x = v}$ whether
+			    $L = (x^k, L')$.
+			\end{itemize}
+			
+			Prove that for any list $L$ of powers of $x$ there is a polynomial such that
+			$\sum L\big\rvert_{x = v} = p(v)$ for all real numbers $v$.
+
+      \begin{solution}[\stretch{1}]
+      \end{solution}
+      \newpage
+    \question[10]
+      Prove that $\sum\limits_{i = 1}^n (i + 1) 2^i = n 2^{n + 1}$ for all integers
+			$n \ge 1$.
+
+      \begin{solution}[\stretch{1}]
+      \end{solution}
+      \newpage
+  \end{questions}
+\end{document}

@@ -1,0 +1,32 @@
+-
+    type: "inproceedings"
+    title: "!dictionary:confrence-articles"
+    view:
+        - "conference"
+
+-
+    type: "talk"
+    title: "!dictionary:talks"
+    view:
+        - "venue"
+
+-
+    type: "journal"
+    title: "!dictionary:journal-articles"
+    view:
+        - "journal"
+        -
+            prefix: "!dictionary:volume"
+            field: "volume"
+        -
+            prefix: "!dictionary:pages"
+            field: "pages"
+        - "year"
+
+-
+    type: "preprint"
+    title: "!dictionary:preprints"
+    view:
+        - "journal"
+        - "volume"
+        - "year"
