@@ -1,0 +1,74 @@
+     
+\documentclass[addpoints]{exam}
+    
+
+
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{amsmath}
+
+\usetikzlibrary{arrows,shapes}
+
+\sloppy
+
+
+\begin{document}
+
+  \pagestyle{headandfoot}
+  \runningheadrule
+  \firstpageheader{ Math 160A }{ Homework 2 }{ October 26, 2019 }
+  \runningheader{ Math 160A }{ Homework 2, Page \thepage\ of \numpages}{ October 26, 2019 }
+
+  \firstpagefooter{}{}{}
+  \runningfooter{}{}{}
+  \begin{flushright}
+    \makebox[0.4\textwidth]{Name: \enspace\hrulefill}
+
+    \vspace{0.2in}
+    \makebox[0.4\textwidth]{Pid:\enspace\hrulefill}
+  \end{flushright}
+
+  \begin{questions}
+    \question
+      
+
+      \begin{parts}
+        \part[10]
+            Let $\phi$, $\psi$, and $\chi$ be propositional formulas on $\Omega$.
+				Show that $\big(\phi \lor (\psi \land \chi)\big) \big\rvert_\rho =
+				    \big((\phi \lor \psi) \land (\phi \lor \chi)\big) \big\rvert_\rho$ for any assignment
+				$\rho$ to the variables $\Omega$.
+            \begin{solution}[\stretch{1}]
+              
+            \end{solution}
+        \part[10]
+            Let $\psi_{1, 1}$, \dots, $\psi_{1, n}$, $\psi_{2, 1}$, \dots, $\psi_{2, m}$ be
+				propositional formulas on $\Omega$.
+				Let $\phi_1 = \bigwedge_{i = 1}^n \psi_{1, i}$ and $\phi_2 = \bigwedge_{j = 1}^m \psi_{2, j}$.
+				
+				Show that $\big(\phi_1 \lor \phi_2\big) \big\rvert_\rho =
+				    \big(\bigwedge_{i = 1}^n \bigwedge_{j = 1}^m
+				        (\psi_{1, i} \lor \psi_{2, j})\big) \big\rvert_\rho$ for any assignment
+				$\rho$ to the variables $\Omega$.
+            \begin{solution}[\stretch{1}]
+              
+            \end{solution}
+        \part[10]
+            Let $\Omega$ be a set of variables. We say that a propositional formula is
+				a literal if the formula is equal to $x$ or $\lnot x$ for $x \in \Omega$.
+				
+				We say that a propositional formula on $\Omega$ is in conjunctive normal form
+				if it is equal to $\bigvee_{i = 1}^n \bigwedge_{j = 1}^{m_i} \psi_{i, j}$,
+				where $\psi_{i, j}$ is a literal.
+				
+				Let $\phi$ be a propositional formula on $\Omega$. Show using structural induction
+				that there is a propositional formula $\psi$ on $\Omega$ in conjunctive normal
+				form such that $\psi\big\rvert_\rho = \phi\big\rvert_\rho$ for any
+				assignment $\rho$ to $\Omega$.
+            \begin{solution}[\stretch{1}]
+              
+            \end{solution}
+      \end{parts}
+      \newpage
+  \end{questions}
+\end{document}
