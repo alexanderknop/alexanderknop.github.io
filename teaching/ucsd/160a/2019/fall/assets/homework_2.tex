@@ -39,7 +39,25 @@
 				    \big((\phi \lor \psi) \land (\phi \lor \chi)\big) \big\rvert_\rho$ for any assignment
 				$\rho$ to the variables $\Omega$.
             \begin{solution}[\stretch{1}]
-              
+              Let us fix some propositional assignment $\rho$ to $\Omega$.
+Note that by the definition
+\[
+    \big(\phi \lor (\psi \land \chi)\big) \big\rvert_\rho =
+    \phi\big\rvert_\rho \lor (\psi \land \chi) \big\rvert_\rho =
+    \phi\big\rvert_\rho \lor (\psi\big\rvert_\rho \land \chi\big\rvert_\rho)
+\]
+and
+\[
+    \big((\phi \lor \psi) \land (\phi \lor \chi)\big) \big\rvert_\rho =
+    (\phi \lor \psi)\big\rvert_\rho \land (\phi \lor \chi) \big\rvert_\rho =
+    (\phi\big\rvert_\rho \lor \psi\big\rvert_\rho) \land
+        (\phi\big\rvert_\rho \lor \chi\big\rvert_\rho).
+\]
+However,
+$\phi\big\rvert_\rho \lor (\psi\big\rvert_\rho \land \chi\big\rvert_\rho) =
+(\phi\big\rvert_\rho \lor \psi\big\rvert_\rho) \land
+    (\phi\big\rvert_\rho \lor \chi\big\rvert_\rho)$ by the distributivity of
+disjunction and conjunction.
             \end{solution}
         \part[10]
             Let $\psi_{1, 1}$, \dots, $\psi_{1, n}$, $\psi_{2, 1}$, \dots, $\psi_{2, m}$ be
@@ -51,7 +69,174 @@
 				        (\psi_{1, i} \lor \psi_{2, j})\big) \big\rvert_\rho$ for any assignment
 				$\rho$ to the variables $\Omega$.
             \begin{solution}[\stretch{1}]
-              
+              Let us again fix some propositional assignment $\rho$ to $\Omega$.
+
+We prove the statement in two steps. In the first one we prove that
+\[
+    \left.\left(
+        \phi_1 \lor \chi
+    \right)\right\rvert_\rho =
+    \left.\left(
+        \bigwedge_{i = 1}^{n} \left(\psi_{1, i} \lor \chi\right)
+    \right)\right\rvert_\rho
+\]
+using induction by $n$.
+
+The base case for $n = 1$ is clear. Let us now prove the induction step from
+$k$ to $k + 1$. Note that
+\[
+    \left(
+        \bigwedge_{i = 1}^{k + 1} \psi_{1, i}
+    \right) \lor \chi =
+    \left(
+        \left(
+            \bigwedge_{i = 1}^{k} \psi_{1, i}
+        \right) \land \psi_{1, k + 1}
+    \right) \lor
+        \chi.
+\]
+By the previous problem, this implies that
+\[
+    \left.\left(
+        \left(
+            \bigwedge_{i = 1}^{k + 1} \psi_{1, i}
+        \right) \lor \chi
+    \right)\right\rvert_\rho =
+    \left.\left(
+        \left(
+            (\bigwedge_{i = 1}^{k} \psi_{1, i}) \lor \chi
+        \right) \land
+        \left(
+            \psi_{1, k + 1} \lor \chi
+        \right)
+    \right)\right\rvert_\rho.
+\]
+The induction hypothesis, implies that
+\[
+    \left.\left(
+        \left(
+            \bigwedge_{i = 1}^{k + 1} \psi_{1, i}
+        \right) \lor \chi
+    \right)\right\rvert_\rho =
+    \left.\left(
+        \left(
+            \bigwedge_{i = 1}^{k} \left(\psi_{1, i} \lor \chi\right)
+        \right) \land
+        \left(
+            \psi_{1, k + 1} \lor \chi
+        \right)
+    \right)\right\rvert_\rho.
+\]
+Therefore, using the definition of the conjunction of several formulas,
+we proved that
+\[
+    \left.\left(
+        \left(
+            \bigwedge_{i = 1}^{k + 1} \psi_{1, i}
+        \right) \lor \chi
+    \right)\right\rvert_\rho =
+    \left.\left(
+        \bigwedge_{i = 1}^{k + 1} \left(\psi_{1, i} \lor \chi\right)
+    \right)\right\rvert_\rho.
+\]
+
+On the second step we prove the statement of the problem using induction by $m$.
+The base case follows from the result we just proved.
+Let us now prove the induction step from $k$ to $k + 1$.
+Note that
+\[
+    \left(
+        \bigwedge_{i = 1}^m \psi_{1, i}
+    \right) \lor
+    \left(
+        \bigwedge_{i = 1}^{k + 1} \psi_{2, i}
+    \right) =
+    \left(
+        \bigwedge_{i = 1}^m \psi_{1, i}
+    \right) \lor
+    \left(
+        \left(
+            \bigwedge_{i = 1}^{k} \psi_{2, i}
+        \right) \land \psi_{2, k + 1}
+    \right).
+\]
+
+By the previous problem,
+\[
+    \left.\left(
+        \left(
+            \bigwedge_{i = 1}^m \psi_{1, i}
+            \right) \lor
+        \left(
+            \bigwedge_{i = 1}^{k + 1} \psi_{2, i}
+        \right)
+    \right)\right\rvert_\rho =
+    \left.\left(
+        \left(
+            \left(
+                \bigwedge_{i = 1}^m \psi_{1, i}
+            \right) \lor
+            \psi_{2, k + 1}
+        \right) \land
+        \left(
+            \left(
+                \bigwedge_{i = 1}^m \psi_{1, i}
+            \right) \lor
+            \left(
+                \bigwedge_{i = 1}^{k} \psi_{2, i}
+            \right)
+        \right)
+    \right)\right\rvert_\rho.
+\]
+Therefore by the previous statement,
+\[
+    \left.\left(
+        \left(
+            \bigwedge_{i = 1}^m \psi_{1, i}
+            \right) \lor
+        \left(
+            \bigwedge_{i = 1}^{k + 1} \psi_{2, i}
+        \right)
+    \right)\right\rvert_\rho =
+    \left.\left(
+        \left(
+            \bigwedge_{i = 1}^m (
+                \psi_{1, i} \lor \psi_{2, k + 1}
+            )
+        \right) \land
+        \left(
+            \left(
+                \bigwedge_{i = 1}^m \psi_{1, i}
+            \right) \lor
+            \left(
+                \bigwedge_{i = 1}^{k} \psi_{2, i}
+            \right)
+        \right)
+    \right)\right\rvert_\rho.
+\]
+Finally, using the induction hypothesis,
+\[
+    \left.\left(
+        \left(
+            \bigwedge_{i = 1}^m \psi_{1, i}
+            \right) \lor
+        \left(
+            \bigwedge_{i = 1}^{k + 1} \psi_{2, i}
+        \right)
+    \right)\right\rvert_\rho =
+    \left.\left(
+        \left(
+            \bigwedge_{i = 1}^m (
+                \psi_{1, i} \lor \psi_{2, k + 1}
+            )
+        \right) \land
+        \left(
+            \bigwedge_{i = 1}^m \bigwedge_{i = 1}^{k} (
+                \psi_{1, i} \lor \psi_{2, i}
+            )            
+        \right)
+    \right)\right\rvert_\rho.
+\]
             \end{solution}
         \part[10]
             Let $\Omega$ be a set of variables. We say that a propositional formula is
@@ -66,7 +251,191 @@
 				form such that $\psi\big\rvert_\rho = \phi\big\rvert_\rho$ for any
 				assignment $\rho$ to $\Omega$.
             \begin{solution}[\stretch{1}]
-              
+              Before we prove the statement of the problem, we need to show several equalities.
+
+Let $\chi_{1, 1}$, \dots, $\chi_{1, n_1}$,
+$\chi_{2, 1}$, \dots, $\chi_{2, n_2}$, $\chi_1$, \dots, $\chi_{n_1 + n_2}$ be
+propositional formulas  over the variables from $\Omega$ such that
+$\chi_i = \chi_{1, i}$ for $1 \le i \le n_1$ and $\chi_i = \chi_{2, i - n_1}$
+for $n_1 < i \le n_1 + n_2$.
+Then for any propositional assignment $\rho$ to $\Omega$,
+\[
+    \left.\left(
+        \left(\bigwedge_{i = 1}^{n_1} \chi_{1, i}\right) \land
+        \left(\bigwedge_{i = 1}^{n_2} \chi_{2, i}\right)
+    \right)\right\rvert_\rho =
+    \left.\left(
+        \bigwedge_{i = 1}^{n_1 + n_2} \chi_{i}
+    \right)\right\rvert_\rho.
+\]
+We can prove the statement using induction by $n_2$. The base case for $n_2 = 1$
+follows from the definition of the long conjunction.
+Let us prove the induction step from $k$ to $k + 1$.
+By the definition of the long conjunction,
+\[
+    \left(\bigwedge_{i = 1}^{n_1} \chi_{1, i}\right) \land
+    \left(\bigwedge_{i = 1}^{k + 1} \chi_{2, i}\right)
+    =
+    \left(\bigwedge_{i = 1}^{n_1} \chi_{1, i}\right) \land
+    \left(
+        \left(\bigwedge_{i = 1}^k \chi_{2, i}\right) \land
+        \chi_{2, k + 1}
+    \right)
+\]
+Note that we proved in class the following
+\begin{multline*}
+    \left.\left(
+        \left(\bigwedge_{i = 1}^{n_1} \chi_{1, i}\right) \land
+        \left(\bigwedge_{i = 1}^{k + 1} \chi_{2, i}\right)
+    \right)\right\rvert_\rho
+    =
+    \left.\left(
+        \left(\bigwedge_{i = 1}^{n_1} \chi_{1, i}\right) \land
+        \left(
+            \left(\bigwedge_{i = 1}^k \chi_{2, i}\right) \land
+            \chi_{2, k + 1}
+        \right)
+    \right)\right\rvert_\rho
+    = \\
+    \left.\left(
+        \left(
+            \left(\bigwedge_{i = 1}^{n_1} \chi_{1, i}\right) \land
+            \left(\bigwedge_{i = 1}^k \chi_{2, i}\right)
+        \right) \land
+        \chi_{2, k + 1}
+    \right)\right\rvert_\rho.
+\end{multline*}
+By the induction hypothesis,
+\[
+    \left.\left(
+        \left(\bigwedge_{i = 1}^{n_1} \chi_{1, i}\right) \land
+        \left(\bigwedge_{i = 1}^{k + 1} \chi_{2, i}\right)
+    \right)\right\rvert_\rho
+    =
+    \left.\left(
+        \left(
+            \bigwedge_{i = 1}^{n_1 + k} \chi_{i}
+        \right) \land
+        \chi_{2, k + 1}
+    \right)\right\rvert_\rho.
+\]
+Which implies the statement by the definition of the long conjunction.
+
+Consider $e_{n, m} : \{0, \dots, m^n - 1\} \to \{0, \dots, m - 1\}^n$ be a bijection
+such that
+\begin{itemize}
+  \item $e_{n, m}(i + m \cdot r, 0) = i$ and
+  \item $e_{n, m}(i + m \cdot r, j) = e_{n - 1, m}(r, j - 1)$,
+\end{itemize}
+for any $0 \le i < m$, $0 \le r < m^{n - 1}$, and $0 \le j < n$.
+We also show that
+$\bigvee_{j = 0}^{n - 1} \bigwedge_{i = 0}^{m - 1} \chi_{j, i} =
+\bigwedge_{q = 0}^{m^n - 1} \bigvee_{j = 0}^{n - 1} \chi_{j, e_{n, m}(q, j)}$.
+We prove the statement using induction by $n$. The case of $n = 1$ is clear.
+We prove now the induction step from $k$ to $k + 1$.
+Note that
+\[
+  \bigvee_{j = 0}^k \bigwedge_{i = 0}^{m - 1} \chi_{j, i} =
+  \left(\bigvee_{j = 0}^{k - 1} \bigwedge_{i = 0}^{m - 1} \chi_{j, i}\right)
+  \lor \bigwedge_{i = 0}^{m - 1} \chi_{k, i}.
+\]
+By the induction hypothesis,
+\[
+  \left.\left(
+    \bigvee_{j = 0}^k \bigwedge_{i = 0}^{m - 1} \chi_{j, i}
+  \right)\right\rvert_\rho =
+  \left.\left(
+    \left(
+      \bigwedge_{q = 0}^{m^k - 1} \bigvee_{j = 0}^{k - 1}
+        \chi_{j, e_{k, m}(q, j)}
+    \right) \lor
+    \bigwedge_{i = 0}^{m - 1} \chi_{k, i}
+  \right)\right\rvert_\rho.
+\]
+Therefore,
+\[
+  \left.\left(
+    \bigvee_{j = 0}^k \bigwedge_{i = 0}^{m - 1} \chi_{j, i}
+  \right)\right\rvert_\rho =
+  \left.\left(
+      \bigwedge_{q = 0}^{m^k - 1}
+        \left(
+          \left(
+            \bigvee_{j = 0}^{k - 1}
+              \chi_{j, e_{k, m}(q, j)}
+          \right) \lor
+          \bigwedge_{i = 0}^{m - 1} \chi_{k, i}
+        \right)
+  \right)\right\rvert_\rho.
+\]
+So
+\[
+  \left.\left(
+    \bigvee_{j = 0}^k \bigwedge_{i = 0}^{m - 1} \chi_{j, i}
+  \right)\right\rvert_\rho =
+  \left.\left(
+      \bigwedge_{q = 0}^{m^k - 1}
+      \bigwedge_{i = 0}^{m - 1}
+        \left(
+          \left(
+            \bigvee_{j = 0}^{k - 1}
+              \chi_{j, e_{k, m}(q, j)}
+          \right)
+          \lor
+          \chi_{k, i}
+        \right)
+  \right)\right\rvert_\rho.
+\]
+As a result,
+\[
+  \left.\left(
+    \bigvee_{j = 0}^k \bigwedge_{i = 0}^{m - 1} \chi_{j, i}
+  \right)\right\rvert_\rho =
+  \left.\left(
+      \bigwedge_{q = 0}^{m^{k + 1} - 1}
+        \left(
+          \bigvee_{j = 0}^k
+            \chi_{j, e_{k + 1, m}(q, j)}
+        \right)
+  \right)\right\rvert_\rho.
+\]
+
+Finally, we are ready to prove the statement of the problem.
+Let us consider the following cases.
+\begin{itemize}
+    \item The first case is when $\phi = x_i$. In this case we can choose
+        $n = 1$, $m_1 = 1$, and $\psi_{1, 1} = x_i$.
+    \item The second case is when $\phi = \phi_1 \land \phi_2$.
+        Note that by the induction hypothesis,
+        $\phi_1 = \bigwedge_{j = 1}^{n_1} \bigvee_{k = 1}^{m_{1, i}} \psi_{1, i, j}$
+        and
+        $\phi_2 = \bigwedge_{j = 1}^{n_2} \bigvee_{k = 1}^{m_{2, i}} \psi_{2, i, j}$.
+        Using the statement of the previous problem,
+        $\phi = \bigwedge_{j = 1}^{n_1 + n_2} \bigvee_{k = 1}^{m_i} \psi_{i, j}$.
+    \item The third case is when $\phi = \phi_1 \lor \phi_2$.
+        Note that by the induction hypothesis,
+        $\phi_1 = \bigwedge_{i = 1}^{n_1} \bigvee_{j = 1}^{m_{1, i}} \psi_{1, i, j}$
+        and
+        $\phi_2 = \bigwedge_{i = 1}^{n_2} \bigvee_{j = 1}^{m_{2, i}} \psi_{2, i, j}$.
+        Using the just proved statement we may conclude that
+        $\phi =
+          \bigwedge_{i = 1}^{n_1 + n_2} \bigvee_{j = 1}^{m_i} \psi_{i, j}$,
+        where $m_i = m_{1, i}$ for $1 \le i \le n_1$ and $m_{2, i - n_1}$ for
+        $n_1 < i \le n_1 + n_2$, $\psi_{i, j} = \psi_{1, i, j}$ for
+        $1 \le i \le n_1$ and $\psi_{i, j} = \psi_{2, i - n_1, j}$ for
+        $n_1 < i \le n_1 + n_2$.
+    \item Finally, the last case is when $\phi = \lnot \phi'$.
+        Note that by the induction hypothesis,
+        $\phi^\prime =
+          \bigwedge_{j = 1}^{n^\prime}
+            \bigvee_{k = 1}^{m^\prime_i} \psi^\prime_{i, j}$.
+
+        Hence, $\phi\rvert_\rho =
+          \bigvee_{j = 1}^{n^\prime}
+            \bigwedge_{k = 1}^{m^\prime_i} \lnot \psi^\prime_{i, j}$.
+        And using the second proven observation in this problem we can present
+        a CNF representation of $\phi$. 
+\end{itemize}
             \end{solution}
       \end{parts}
       \newpage
