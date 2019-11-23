@@ -1,0 +1,70 @@
+     
+\documentclass[addpoints]{exam}
+    
+
+
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{amsmath}
+
+\usetikzlibrary{arrows,shapes}
+
+\sloppy
+
+
+
+\begin{document}
+
+  \pagestyle{headandfoot}
+  \runningheadrule
+  \firstpageheader{ Math 160A }{ Homework 4 }{ November 23, 2019 }
+  \runningheader{ Math 160A }{ Homework 4, Page \thepage\ of \numpages}{ November 23, 2019 }
+
+  \firstpagefooter{}{}{}
+  \runningfooter{}{}{}
+  \begin{flushright}
+    \makebox[0.4\textwidth]{Name: \enspace\hrulefill}
+
+    \vspace{0.2in}
+    \makebox[0.4\textwidth]{Pid:\enspace\hrulefill}
+  \end{flushright}
+
+  \begin{questions}
+    \question[10]
+      Let us consider a signature $(I, <; 0)$, where $I$ is a unary relation
+			intended to mean ``is interesting'', $<$ is a binary relation
+			intended to mean ``is less than'', and $0$ is a constant (a function with
+			zero arguments).
+			
+			Translate into this language the English sentences listed below.
+			If the English sentence is ambiguous, you will need more than one translation.
+			\begin{itemize}
+			    \item Zero is less than any number.
+			    \item If any number is interesting, then zero is interesting.
+			    \item No number is less than zero.
+			    \item Any uninteresting number with the property that all
+			        smaller numbers are interesting certainly is interesting.
+			    \item There is no number such that all numbers are less than it.
+			    \item There is no number such that no number is less than it.
+			\end{itemize}
+
+      \begin{solution}[\stretch{1}]
+      \end{solution}
+      \newpage
+    \question[10]
+      Let us consider a signature $\mathcal{S} = (=; +, \cdot)$, where predicates and
+			functions are binary.  Let $\mathfrak{M} = (\mathbb{N}; =; +, \cdot)$ be a
+			structure.
+			
+			\begin{itemize}
+			    \item Write a formula $\phi$ depending on $x$ such that for any assignment
+			        $s$, $\mathfrak{M} \models \phi[s]$ iff $s(x) = 1$.
+			    \item Write a formula $\phi$ depending on $x$ and $y$ such that for any
+			        assignment $s$, $\mathfrak{M} \models \phi[s]$ iff $s(x) \le s(y)$.
+			\end{itemize}
+
+      \begin{solution}[\stretch{1}]
+      \end{solution}
+      \newpage
+  \end{questions}
+\end{document}
