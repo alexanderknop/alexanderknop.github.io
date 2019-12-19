@@ -167,6 +167,14 @@
                 -
                     year: 2019
                     season: fall
+        -
+            number: "Math 160B"
+            name: "Elementary Mathematical Logic II"
+            path: "160b/"
+            years:
+                -
+                    year: 2020
+                    season: winter
         # -
         #     number: "Math 160B"
         #     name: "Introduction to Mathematical Logic"
