@@ -228,6 +228,7 @@ layout: default
                     </ul>
                 </li>
     		</ul>
+        {% if page.tas %}
     		<h3>
     			Teaching assistants
     		</h3>
@@ -250,6 +251,7 @@ layout: default
                     </li>
                 {% endfor %}
     		</ul>
+        {% endif %}
     	</div>
     </section>
     {% if page.calendar %}
