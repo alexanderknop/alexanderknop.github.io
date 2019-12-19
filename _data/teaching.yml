@@ -137,6 +137,9 @@
                 -
                     year: 2018
                     season: spring
+                -
+                    year: 2020
+                    season: winter
         -
             number: "Math 10C"
             name: "Calculus III"
