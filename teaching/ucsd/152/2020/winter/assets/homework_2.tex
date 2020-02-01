@@ -1,0 +1,75 @@
+     
+\documentclass[addpoints]{exam}
+    
+
+
+\usepackage{amsfonts}
+\usepackage{tikz}
+\usepackage{amsmath}
+
+\usetikzlibrary{arrows,shapes}
+
+\sloppy
+
+
+
+\begin{document}
+
+  \pagestyle{headandfoot}
+  \runningheadrule
+  \firstpageheader{ Math 152 }{ Homework 2 }{ January 8, 2020 }
+  \runningheader{ Math 152 }{ Homework 2, Page \thepage\ of \numpages}{ January 8, 2020 }
+
+  \firstpagefooter{}{}{}
+  \runningfooter{}{}{}
+  \begin{flushright}
+    \makebox[0.4\textwidth]{Name: \enspace\hrulefill}
+
+    \vspace{0.2in}
+    \makebox[0.4\textwidth]{Pid:\enspace\hrulefill}
+  \end{flushright}
+
+  \begin{questions}
+    \question[10]
+      We say that $L$ is a $B$-decision list 
+			\begin{description}
+			  \item[(base case)] if either $T$ is a number $y \in \mathbb{Z}$, or
+			  \item[(induction step)] $T$ is equal to $(f, v, L')$ where $f : \mathbb{Z} \to
+			  \{0, 1\}$, $v \in \mathbb{Z}$, and $L$ is a $B$-decision list.
+			\end{description}
+			
+			We can also define the value $\mathrm{val}(L, x)$ of a $B$-decision list $L$ at
+			$x \in \mathbb{Z}$.
+			\begin{description}
+			  \item[(base case)] If $L$ is a number $y$, then $\mathrm{val}(L, x) = y$, and
+			  \item[(induction step)] if $L = (f, v, L')$, then
+			    \[
+			      \mathrm{val}(L, x) = 
+			      \begin{cases}
+			        v & \text{if } f(x) = 1 \\
+			        \mathrm{val}(L', x) & \text{otherwise}
+			      \end{cases}.
+			    \]
+			\end{description}
+			
+			Similarly one may define the length $\ell(L)$ of a $B$-decition list $L$.
+			\begin{description}
+			  \item[(base case)] If $L$ is a number $y$, then $\ell(L) = 1$, and
+			  \item[(induction step)] if $L = (f, v, L')$, then $\ell(L) = \ell(L') + 1$.
+			\end{description}
+			
+			Assume that $\mathrm{val}(L, x) = x$ for any $x \in [1000]$ show that 
+			$\ell(L) \ge 1000$.
+
+      \begin{solution}[\stretch{1}]
+      \end{solution}
+      \newpage
+    \question[10]
+      Let $S$ be a set such that $3 \in S$ and $(x + y) \in S$ for any $x, y \in S$.
+			Show that $S = \{3k ~:~ k \in \mathbb{N}\}$.
+
+      \begin{solution}[\stretch{1}]
+      \end{solution}
+      \newpage
+  \end{questions}
+\end{document}
