@@ -1,0 +1,12 @@
+---
+title: "On OBDD-Based Algorithms and Proof Systems That Dynamically Change Order of Variables"
+type: "journal"
+journal: "Journal of Symbolic Logic"
+year: 2020
+authors:    
+    - "Dmitry Itsykson"
+    - "Alexander Knop"
+    - "Andrey Romashchenko"
+    - "Dmitry Sokolov"
+paper-url: "http://dx.doi.org/10.1017/jsl.2019.53"
+---
