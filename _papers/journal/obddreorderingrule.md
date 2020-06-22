@@ -8,5 +8,6 @@ authors:
     - "Alexander Knop"
     - "Andrey Romashchenko"
     - "Dmitry Sokolov"
+pages: "1-41"
 paper-url: "http://dx.doi.org/10.1017/jsl.2019.53"
 ---
