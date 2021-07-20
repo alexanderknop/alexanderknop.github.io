@@ -13,4 +13,3 @@ paper-url: "https://doi.org/10.1145/3471469.3471479"
 volume: 52
 number: 2
 ---
-{"mode":"full","isActive":false}
