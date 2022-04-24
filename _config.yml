@@ -9,8 +9,7 @@ position:  "S.E. Warschawski Assistant Professor"
 interests:
     - "!dictionary:proof-complexity"
     - "!dictionary:structural-complexity"
-    - "!dictionary:algorithms"
-    - "!dictionary:cryptography"
+    - "!dictionary:dp"
 
 address: "9500 Gilman Drive, La Jolla, CA  92093-0112, United States of America"
 university: "UC San Diego"
