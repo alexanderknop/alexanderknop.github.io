@@ -2,6 +2,8 @@
 title: "On OBDD-Based Algorithms and Proof Systems That Dynamically Change Order of Variables"
 type: "journal"
 journal: "Journal of Symbolic Logic"
+volume: 85
+issue: 2
 year: 2020
 authors:    
     - "Dmitry Itsykson"
